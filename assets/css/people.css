@@ -1,0 +1,252 @@
+/* People pages */
+
+.people-page {
+    background: #f6f8fb;
+}
+
+.people-hero {
+    padding: 72px 0 52px;
+    background: #003366;
+    color: #fff;
+}
+
+.people-hero .container,
+.people-section .container {
+    max-width: 1400px;
+    width: 94%;
+    margin: 0 auto;
+}
+
+.people-hero h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.people-hero p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.people-main-tabs {
+    background: #fff;
+    border-bottom: 1px solid #d9dee7;
+}
+
+.people-main-tabs .container {
+    display: flex;
+    max-width: 1400px;
+    width: 94%;
+    margin: 0 auto;
+}
+
+.people-main-tab {
+    min-width: 160px;
+    padding: 20px 36px;
+    border-right: 1px solid #d9dee7;
+    color: #4c596d;
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+}
+
+.people-main-tab:first-child {
+    border-left: 1px solid #d9dee7;
+}
+
+.people-main-tab.active {
+    background: #003366;
+    color: #fff;
+}
+
+.people-section {
+    padding: 36px 0 80px;
+}
+
+.people-subtabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.people-subtab.tab-btn {
+    width: auto;
+    min-width: 112px;
+    margin: 0;
+    padding: 13px 24px;
+    border: 1px solid #cfd5df;
+    border-radius: 4px;
+    background: #eef1f5;
+    color: #596579;
+    font-size: 0.98rem;
+    font-weight: 800;
+}
+
+.people-subtab.tab-btn.active {
+    border-color: #6f7d91;
+    background: #6f7d91;
+    color: #fff;
+}
+
+.faculty-group + .faculty-group {
+    margin-top: 58px;
+}
+
+.faculty-group-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #17233c;
+}
+
+.faculty-group-title::before {
+    content: "";
+    width: 6px;
+    height: 24px;
+    background: #003366;
+    border-radius: 2px;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.faculty-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 24px;
+    min-height: 300px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #d9dee7;
+    border-radius: 6px;
+}
+
+.faculty-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    align-self: center;
+    object-fit: cover;
+    background: #e9edf3;
+    border: 1px solid #e2e6ed;
+}
+
+.faculty-info {
+    min-width: 0;
+}
+
+.faculty-name {
+    margin: 4px 96px 20px 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #17314f;
+}
+
+.faculty-profile-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 18px;
+    border: 1px solid #cfd5df;
+    background: #fff;
+    color: #333;
+    font-size: 0.82rem;
+    text-decoration: none;
+}
+
+.faculty-detail-list {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    margin: 0;
+    border-top: 1px solid #dfe3ea;
+}
+
+.faculty-detail-list dt,
+.faculty-detail-list dd {
+    min-height: 34px;
+    margin: 0;
+    padding: 9px 0;
+    border-bottom: 1px solid #dfe3ea;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.faculty-detail-list dt {
+    color: #111;
+    font-weight: 800;
+}
+
+.faculty-detail-list dd {
+    color: #445066;
+    overflow-wrap: anywhere;
+}
+
+.faculty-detail-list a {
+    color: #315f9d;
+    text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+    .faculty-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .people-hero {
+        padding: 48px 0 36px;
+    }
+
+    .people-hero h2 {
+        font-size: 1.9rem;
+    }
+
+    .people-main-tabs .container,
+    .people-subtabs {
+        overflow-x: auto;
+    }
+
+    .people-main-tab {
+        min-width: 120px;
+        padding: 16px 24px;
+    }
+
+    .people-subtab.tab-btn {
+        min-width: 96px;
+        padding: 11px 18px;
+        font-size: 0.9rem;
+    }
+
+    .faculty-card {
+        grid-template-columns: 130px minmax(0, 1fr);
+        gap: 16px;
+        padding: 16px;
+        min-height: 0;
+    }
+
+    .faculty-name {
+        margin-right: 0;
+        font-size: 1.25rem;
+    }
+
+    .faculty-profile-link {
+        display: none;
+    }
+
+    .faculty-detail-list {
+        grid-template-columns: 72px minmax(0, 1fr);
+    }
+
+    .faculty-detail-list dt,
+    .faculty-detail-list dd {
+        font-size: 0.84rem;
+    }
+}

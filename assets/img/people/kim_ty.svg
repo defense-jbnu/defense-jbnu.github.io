@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc">
+  <title id="title">김태영 연구원 프로필 이미지</title>
+  <desc id="desc">기본 프로필 이미지</desc>
+  <rect width="400" height="500" fill="#e9edf3"/>
+  <circle cx="200" cy="180" r="74" fill="#c5ccd8"/>
+  <path d="M78 418c15-82 62-128 122-128s107 46 122 128" fill="#c5ccd8"/>
+  <rect x="0" y="0" width="400" height="500" fill="none" stroke="#d9dee7" stroke-width="2"/>
+</svg>

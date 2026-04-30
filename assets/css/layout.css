@@ -82,6 +82,34 @@
     color: #003366;
 }
 
+.sub-menu-depth {
+    margin: -4px 0 8px;
+    padding: 0;
+    list-style: none;
+}
+
+.sub-menu-depth li a {
+    padding: 7px 25px 7px 42px;
+    font-size: 0.94rem;
+    color: #8a96a8;
+    font-weight: 500;
+}
+
+.sub-menu-depth li a::before {
+    content: "- ";
+}
+
+.sub-menu-depth li.active a,
+.sub-menu-depth li a:hover {
+    background: #f6f9fc;
+    color: #1689d8;
+}
+
+.sub-menu li.active > a {
+    color: #003366;
+    font-weight: 800;
+}
+
 /* 마우스 호버 시 표시 */
 .site-nav > ul > li:hover .sub-menu {
     display: block;
