@@ -38,21 +38,20 @@ const SITE_NAV_ITEMS = [
     },
     {
         label: '연구 분야',
-        href: '#',
+        href: 'pages/research/fields.html',
         children: [
-            { label: 'AI / 사이버보안', href: '#' },
-            { label: '유무인 복합', href: '#' },
-            { label: '우주 / 양자', href: '#' },
-            { label: '센서 / 전자전', href: '#' },
+            { label: '첨단방위산업학과', href: 'pages/research/fields.html#research-department' },
+            { label: '공과대학 및 타 학과', href: 'pages/research/fields.html#research-college' },
+            { label: '외부 협력', href: 'pages/research/fields.html#research-external' },
         ],
     },
     {
         label: '산학협력',
-        href: 'pages/research/joint.html',
+        href: 'pages/research/cluster.html',
         children: [
-            { label: '협력 기업', href: '#' },
-            { label: '산학연 공동연구', href: 'pages/research/joint.html' },
             { label: '방산 클러스터', href: 'pages/research/cluster.html' },
+            { label: '협력기업', href: 'pages/research/partners.html' },
+            { label: '산학연 공동연구', href: 'pages/research/joint.html' },
         ],
     },
     {
@@ -68,10 +67,18 @@ const SITE_NAV_ITEMS = [
         href: 'pages/community/notice.html',
         children: [
             { label: '공지사항', href: 'pages/community/notice.html' },
+            { label: '언론보도', href: 'pages/community/news.html' },
+            { label: '기고·칼럼', href: 'pages/community/column.html' },
             { label: '갤러리', href: 'pages/community/gallery.html' },
-            { label: '언론보도 / 자료실', href: 'pages/community/news.html' },
         ],
     },
+];
+
+const SITE_UTILITY_ITEMS = [
+    { label: 'HOME', href: 'index.html', icon: 'home' },
+    { label: 'SITEMAP', href: 'sitemap.html', icon: 'sitemap' },
+    { label: 'ENGLISH', href: '', icon: 'english', disabled: true },
+    { label: 'YouTube', href: '', icon: 'youtube', disabled: true, isIconOnly: true },
 ];
 
 function buildRootedHref(root, href) {
@@ -82,6 +89,25 @@ function buildRootedHref(root, href) {
     }
 
     return `${normalizedRoot}/${href}`;
+}
+
+function createUtilityLink(item, root) {
+    const element = item.disabled ? document.createElement('span') : document.createElement('a');
+    element.className = `site-utility-link site-utility-${item.icon}`;
+    element.textContent = item.label;
+
+    if (item.isIconOnly) {
+        element.setAttribute('aria-label', item.label);
+    }
+
+    if (item.disabled) {
+        element.setAttribute('aria-disabled', 'true');
+        element.title = '추후 제공 예정';
+        return element;
+    }
+
+    element.href = buildRootedHref(root, item.href);
+    return element;
 }
 
 function createNavLink(item, root) {
@@ -117,6 +143,39 @@ function isAnyChildCurrent(children = [], root) {
 
         return isAnyChildCurrent(child.children, root);
     });
+}
+
+function renderSiteUtilityLinks() {
+    const headerContainer = document.querySelector('.site-header .container');
+    const nav = document.querySelector('.site-nav');
+
+    if (!headerContainer || !nav || document.querySelector('.site-utility')) {
+        return;
+    }
+
+    const root = nav.querySelector('[data-site-menu]')?.dataset.navRoot || '.';
+    const menuArea = document.createElement('div');
+    menuArea.className = 'site-header-menu';
+
+    const utilityNav = document.createElement('nav');
+    utilityNav.className = 'site-utility';
+    utilityNav.setAttribute('aria-label', '유틸리티 메뉴');
+
+    const utilityList = document.createElement('ul');
+    const fragment = document.createDocumentFragment();
+
+    SITE_UTILITY_ITEMS.forEach(item => {
+        const utilityItem = document.createElement('li');
+        utilityItem.appendChild(createUtilityLink(item, root));
+        fragment.appendChild(utilityItem);
+    });
+
+    utilityList.appendChild(fragment);
+    utilityNav.appendChild(utilityList);
+
+    headerContainer.insertBefore(menuArea, nav);
+    menuArea.appendChild(utilityNav);
+    menuArea.appendChild(nav);
 }
 
 function renderSiteNavigation() {
@@ -227,23 +286,105 @@ function renderSiteNavigation() {
     navList.replaceChildren(fragment);
 }
 
+function appendSitemapLinks(list, children, root) {
+    children.forEach(child => {
+        if (child.href) {
+            const item = document.createElement('li');
+            item.appendChild(createNavLink(child, root));
+            list.appendChild(item);
+        }
+
+        if (child.children) {
+            appendSitemapLinks(list, child.children, root);
+        }
+    });
+}
+
+function renderSitemap() {
+    const sitemap = document.querySelector('[data-site-map]');
+
+    if (!sitemap) {
+        return;
+    }
+
+    const root = sitemap.dataset.navRoot || '.';
+    const fragment = document.createDocumentFragment();
+
+    SITE_NAV_ITEMS.forEach(item => {
+        const section = document.createElement('section');
+        section.className = 'sitemap-section';
+
+        const title = document.createElement('h3');
+        const titleLink = createNavLink(item, root);
+        titleLink.textContent = item.label;
+        title.appendChild(titleLink);
+        section.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.className = 'sitemap-grid';
+
+        if (item.menuType === 'mega') {
+            item.children.forEach(column => {
+                const group = document.createElement('div');
+                group.className = 'sitemap-group';
+
+                const groupTitle = document.createElement('h4');
+                groupTitle.textContent = column.label;
+                group.appendChild(groupTitle);
+
+                const list = document.createElement('ul');
+                appendSitemapLinks(list, column.children, root);
+                group.appendChild(list);
+                grid.appendChild(group);
+            });
+        } else {
+            item.children.forEach(child => {
+                const group = document.createElement('div');
+                group.className = 'sitemap-group';
+
+                const groupTitle = document.createElement('h4');
+                groupTitle.appendChild(createNavLink(child, root));
+                group.appendChild(groupTitle);
+
+                if (child.children) {
+                    const list = document.createElement('ul');
+                    appendSitemapLinks(list, child.children, root);
+                    group.appendChild(list);
+                }
+
+                grid.appendChild(group);
+            });
+        }
+
+        section.appendChild(grid);
+        fragment.appendChild(section);
+    });
+
+    sitemap.replaceChildren(fragment);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    renderSiteUtilityLinks();
     renderSiteNavigation();
+    renderSitemap();
 
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabCons = document.querySelectorAll('.tab-con');
 
-    function activateTab(targetId) {
+    function activateTab(targetId, group = null) {
         const targetContent = document.getElementById(targetId);
 
         if (!targetContent) {
             return;
         }
 
-        const targetButton = document.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+        const groupSelector = group ? `[data-tab-group="${group}"]` : '';
+        const targetButton = document.querySelector(`.tab-btn${groupSelector}[data-tab="${targetId}"]`);
+        const scopedButtons = group ? document.querySelectorAll(`.tab-btn${groupSelector}`) : tabBtns;
+        const scopedContents = group ? document.querySelectorAll(`.tab-con${groupSelector}`) : tabCons;
 
-        tabBtns.forEach(b => b.classList.remove('active'));
-        tabCons.forEach(c => c.classList.remove('active'));
+        scopedButtons.forEach(b => b.classList.remove('active'));
+        scopedContents.forEach(c => c.classList.remove('active'));
 
         if (targetButton) {
             targetButton.classList.add('active');
@@ -255,15 +396,19 @@ document.addEventListener('DOMContentLoaded', () => {
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-tab');
-            activateTab(targetId);
+            activateTab(targetId, btn.dataset.tabGroup || null);
         });
     });
 
     if (window.location.hash) {
-        activateTab(window.location.hash.slice(1));
+        const targetId = window.location.hash.slice(1);
+        const targetButton = document.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+        activateTab(targetId, targetButton?.dataset.tabGroup || null);
     }
 
     window.addEventListener('hashchange', () => {
-        activateTab(window.location.hash.slice(1));
+        const targetId = window.location.hash.slice(1);
+        const targetButton = document.querySelector(`.tab-btn[data-tab="${targetId}"]`);
+        activateTab(targetId, targetButton?.dataset.tabGroup || null);
     });
 });

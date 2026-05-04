@@ -5,9 +5,12 @@
 }
 
 .people-hero {
-    padding: 72px 0 52px;
-    background: #003366;
+    padding: 88px 0 80px;
+    background:
+        linear-gradient(rgba(22, 137, 216, 0.12), rgba(0, 51, 102, 0.62)),
+        url('../img/main/space_satellite.jpg') center / cover;
     color: #fff;
+    text-align: center;
 }
 
 .people-hero .container,
@@ -18,76 +21,96 @@
 }
 
 .people-hero h2 {
-    font-size: 2.4rem;
+    margin-bottom: 18px;
+    font-size: 3.8rem;
     font-weight: 800;
-    margin-bottom: 12px;
+    line-height: 1.15;
 }
 
 .people-hero p {
-    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.25rem;
+    font-weight: 600;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.82);
+    word-break: keep-all;
 }
 
 .people-main-tabs {
-    background: #fff;
-    border-bottom: 1px solid #d9dee7;
+    position: sticky;
+    top: 84px;
+    z-index: 20;
+    border-bottom: 1px solid #dce4ee;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
 }
 
 .people-main-tabs .container {
     display: flex;
+    width: 100%;
     max-width: 1400px;
-    width: 94%;
-    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .people-main-tab {
-    min-width: 160px;
-    padding: 20px 36px;
-    border-right: 1px solid #d9dee7;
-    color: #4c596d;
-    font-size: 1.05rem;
+    display: flex;
+    min-height: 58px;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid transparent;
+    color: #5a6878;
+    font-size: 1.12rem;
     font-weight: 800;
     text-align: center;
     text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.people-main-tab:first-child {
-    border-left: 1px solid #d9dee7;
-}
-
+.people-main-tab:hover,
+.people-main-tab:focus,
 .people-main-tab.active {
-    background: #003366;
-    color: #fff;
+    border-color: #003366;
+    background: #eaf4fb;
+    color: #003366;
 }
 
 .people-section {
-    padding: 36px 0 80px;
+    padding: 52px 0 80px;
 }
 
 .people-subtabs {
     display: flex;
-    gap: 8px;
     margin-bottom: 28px;
+    border-bottom: 1px solid #dce4ee;
+    background: #fff;
 }
 
 .people-subtab.tab-btn {
-    width: auto;
-    min-width: 112px;
+    display: flex;
+    min-height: 52px;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
     margin: 0;
-    padding: 13px 24px;
-    border: 1px solid #cfd5df;
-    border-radius: 4px;
-    background: #eef1f5;
-    color: #596579;
-    font-size: 0.98rem;
+    padding: 0 18px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: #5a6878;
+    font-size: 1rem;
     font-weight: 800;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
+.people-subtab.tab-btn:hover,
+.people-subtab.tab-btn:focus,
 .people-subtab.tab-btn.active {
-    border-color: #6f7d91;
-    background: #6f7d91;
-    color: #fff;
+    border-color: #003366;
+    background: #eaf4fb;
+    color: #003366;
 }
 
 .faculty-group + .faculty-group {
@@ -202,27 +225,43 @@
 
 @media (max-width: 680px) {
     .people-hero {
-        padding: 48px 0 36px;
+        padding: 62px 0 56px;
     }
 
     .people-hero h2 {
-        font-size: 1.9rem;
+        font-size: 2.5rem;
+    }
+
+    .people-hero p {
+        font-size: 1.05rem;
     }
 
     .people-main-tabs .container,
     .people-subtabs {
         overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .people-main-tabs {
+        top: 122px;
+    }
+
+    .people-main-tabs .container {
+        padding: 0;
     }
 
     .people-main-tab {
-        min-width: 120px;
-        padding: 16px 24px;
+        min-width: 150px;
+        padding: 0 14px;
+        font-size: 0.95rem;
+        white-space: nowrap;
     }
 
     .people-subtab.tab-btn {
-        min-width: 96px;
-        padding: 11px 18px;
+        min-width: 150px;
+        padding: 0 14px;
         font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     .faculty-card {
