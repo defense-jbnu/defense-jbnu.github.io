@@ -14,6 +14,7 @@
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
+    gap: 28px;
     max-width: 1400px; 
     width: 95%;
     margin: 0 auto;
@@ -24,6 +25,7 @@
 /* --- 메인 내비게이션 (1단계) --- */
 .site-nav > ul { 
     display: flex; /* 메인 메뉴만 가로로 배치 */
+    gap: clamp(16px, 2.6vw, 40px);
     list-style: none; 
     margin: 0;
     padding: 0;
@@ -31,7 +33,7 @@
 
 .site-nav > ul > li {
     position: relative; /* 서브메뉴의 기준점 */
-    margin-left: 40px; 
+    margin-left: 0; 
 }
 
 .site-nav > ul > li > a { 
@@ -111,8 +113,65 @@
 }
 
 /* 마우스 호버 시 표시 */
-.site-nav > ul > li:hover .sub-menu {
+.site-nav > ul > li:hover .sub-menu,
+.site-nav > ul > li:focus-within .sub-menu {
     display: block;
+}
+
+.has-mega {
+    position: static;
+}
+
+.site-nav > ul > li.has-mega:hover .mega-menu,
+.site-nav > ul > li.has-mega:focus-within .mega-menu {
+    display: grid;
+}
+
+.mega-menu {
+    left: 50%;
+    width: min(760px, calc(100vw - 48px));
+    min-width: 0;
+    padding: 24px 28px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    transform: translateX(-50%);
+}
+
+.mega-menu .mega-menu-column {
+    display: block;
+    min-width: 0;
+}
+
+.mega-menu-title {
+    display: block;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbe4ef;
+    color: #003366;
+    font-size: 1.08rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.mega-menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mega-menu .mega-menu-list a {
+    padding: 9px 0;
+    color: #4c5d70;
+    font-size: 1rem;
+    line-height: 1.35;
+    white-space: normal;
+}
+
+.mega-menu .mega-menu-list a:hover,
+.mega-menu .mega-menu-list li.active a {
+    background: transparent;
+    color: #1689d8;
+    font-weight: 800;
 }
 
 /* --- 푸터 --- */
@@ -127,6 +186,20 @@
 .copyright {
     margin-top: 10px;
     color: #777;
+}
+
+@media (max-width: 1180px) {
+    .site-logo img {
+        height: 52px;
+    }
+
+    .site-nav > ul {
+        gap: 18px;
+    }
+
+    .site-nav > ul > li > a {
+        font-size: 1.12rem;
+    }
 }
 
 
@@ -156,6 +229,29 @@
     .site-nav > ul > li > a { 
         font-size: 1rem !important;
         padding: 5px 0;
+    }
+
+    .sub-menu {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mega-menu {
+        width: min(92vw, 360px);
+        padding: 18px;
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .mega-menu-title {
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+        font-size: 1rem;
+    }
+
+    .mega-menu .mega-menu-list a {
+        padding: 7px 0;
+        font-size: 0.95rem;
     }
 
     .site-footer {
