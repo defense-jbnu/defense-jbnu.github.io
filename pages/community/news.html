@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>첨단방위산업학과 | 전북대학교 K-방위산업연구소</title>
+    <title>언론보도 | 전북대학교 K-방위산업연구소</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
@@ -23,19 +23,50 @@
     </div>
 </header>
 
-<main>
-    <section class="preparing-section" style="padding: 150px 0; text-align: center; background: #f9f9f9;">
+<main class="education-page community-board-page">
+    <section class="education-hero community-news-hero">
         <div class="container">
-            <div style="font-size: 4rem; margin-bottom: 20px;">⚠️</div>
-            <h2 style="font-size: 2.5rem; font-weight: 800; color: #003366; margin-bottom: 20px;">현재 페이지 준비중입니다.</h2>
-            <p style="font-size: 1.2rem; color: #666; line-height: 1.6; margin-bottom: 40px;">
-                전북대학교 K-방위산업연구소 홈페이지를 방문해 주셔서 감사합니다.<br>
-                보다 상세한 정보를 제공하기 위해 현재 콘텐츠를 제작 중입니다.
+            <p class="education-kicker">Media Coverage</p>
+            <h2>언론보도</h2>
+            <p>
+                전북대학교 K-방위산업연구소와 첨단방위산업학과의 대외 보도 소식을 모았습니다.
             </p>
-            <a href="../../index.html" style="padding: 15px 40px; background: #003366; color: #fff; font-weight: bold; border-radius: 5px; text-decoration: none;">메인 페이지로 돌아가기</a>
+        </div>
+    </section>
+
+    <section class="community-board-section">
+        <div class="container community-board-container">
+            <div class="community-board-header">
+                <div>
+                    <span class="community-board-eyebrow">Press Archive</span>
+                    <h3>언론보도</h3>
+                </div>
+                <span class="community-board-count">전체 <strong id="total-count">0</strong>건</span>
+            </div>
+
+            <table class="notice-table community-notice-table community-news-table">
+                <thead>
+                    <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">매체</th>
+                        <th scope="col">작성일</th>
+                    </tr>
+                </thead>
+                <tbody id="news-list">
+                    <tr>
+                        <td colspan="4" class="community-board-empty">언론보도를 불러오는 중입니다...</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="pagination-wrap" class="pagination community-pagination" aria-label="언론보도 페이지">
+            </div>
         </div>
     </section>
 </main>
+
+<script src="../../assets/js/news.js"></script>
 
 <footer class="site-footer">
     <div class="container">

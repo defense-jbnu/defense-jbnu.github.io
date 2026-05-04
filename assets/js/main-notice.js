@@ -3,7 +3,7 @@
 async function loadMainNotices() {
     try {
         // 1. 데이터 가져오기 (index.html 기준 경로)
-        const response = await fetch('data/notice.json');
+        const response = await fetch('data/notice/list.json');
         const allData = await response.json();
 
         // 2. 최신글 4개만 추출 (수학적 슬라이싱)
@@ -21,12 +21,12 @@ async function loadMainNotices() {
 
             return `
                 <li class="news-item">
-                    <a href="pages/community/${item.link}">
+                    <a href="${getMainNoticeHref(item.link)}">
                         <div class="item-date">
                             <span class="day">${day}</span>
                             <span class="year-month">${year}-${month}</span>
                         </div>
-                        <h3 class="item-subject">${item.title}</h3>
+                        <h3 class="item-subject">${getMainNoticeTitle(item.title)}</h3>
                         <div class="item-view">VIEW <span class="long-arrow">——→</span></div>
                     </a>
                 </li>
@@ -36,6 +36,18 @@ async function loadMainNotices() {
     } catch (error) {
         console.error("메인 소식 로드 실패:", error);
     }
+}
+
+function getMainNoticeTitle(title) {
+    return title.replace(/^\[[^\]]+\]\s*/, '').trim();
+}
+
+function getMainNoticeHref(link) {
+    if (/^https?:\/\//.test(link)) {
+        return link;
+    }
+
+    return `pages/community/${link}`;
 }
 
 // 실행

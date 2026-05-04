@@ -26,6 +26,7 @@
 <main class="people-page">
     <section class="people-hero">
         <div class="container">
+            <p class="education-kicker">Faculty</p>
             <h2>교수</h2>
             <p>전북대학교 K-방위산업연구소와 함께하는 교수진을 소개합니다.</p>
         </div>
@@ -41,11 +42,12 @@
     <section class="people-section">
         <div class="container">
             <div class="people-subtabs" aria-label="교수 구분">
-                <button class="people-subtab tab-btn active" type="button" data-tab="full-time-faculty">전임</button>
-                <button class="people-subtab tab-btn" type="button" data-tab="part-time-faculty">비전임</button>
+                <button class="people-subtab tab-btn active" type="button" data-tab-group="faculty" data-tab="full-time-faculty">전임</button>
+                <button class="people-subtab tab-btn" type="button" data-tab-group="faculty" data-tab="special-faculty">특ㆍ겸ㆍ객원 교수</button>
+                <button class="people-subtab tab-btn" type="button" data-tab-group="faculty" data-tab="emeritus-faculty">명예교수</button>
             </div>
 
-            <div id="full-time-faculty" class="faculty-group tab-con active">
+            <div id="full-time-faculty" class="faculty-group tab-con active" data-tab-group="faculty">
                 <h3 class="faculty-group-title">전임</h3>
                 <div class="faculty-grid">
                     <article class="faculty-card">
@@ -123,7 +125,7 @@
                                 <dt>연구분야</dt><dd>고에너지 밀도를 시험 및 해석</dd>
                                 <dt>전화번호</dt><dd>063) 262-5391</dd>
                                 <dt>E-mail</dt><dd><a href="mailto:moon1song@jbnu.ac.kr">moon1song@jbnu.ac.kr</a></dd>
-                                <dt>홈페이지</dt><dd><a href="https://sites.google.com/view/moon1song/home" target="_blank" rel="noopener">sites.google.com/view/moon1song/home</a></dd>
+                                <dt>홈페이지</dt><dd><a href="https://sites.google.com/view/moon1song/home" target="_blank" rel="noopener">https://sites.google.com/view/moon1song/home</a></dd>
                             </dl>
                         </div>
                     </article>
@@ -139,7 +141,7 @@
                                 <dt>연구분야</dt><dd>무인시스템, 자율주행, 자율비행</dd>
                                 <dt>전화번호</dt><dd></dd>
                                 <dt>E-mail</dt><dd><a href="mailto:lee.dk@jbnu.ac.kr">lee.dk@jbnu.ac.kr</a></dd>
-                                <dt>홈페이지</dt><dd><a href="http://drl.jbnu.ac.kr/" target="_blank" rel="noopener">drl.jbnu.ac.kr</a></dd>
+                                <dt>홈페이지</dt><dd><a href="https://drl.jbnu.ac.kr/" target="_blank" rel="noopener">https://drl.jbnu.ac.kr/</a></dd>
                             </dl>
                         </div>
                     </article>
@@ -155,39 +157,23 @@
                                 <dt>연구분야</dt><dd>사이버보안, 양자내성암호, 인공지능보안</dd>
                                 <dt>전화번호</dt><dd>063) 270-4585</dd>
                                 <dt>E-mail</dt><dd><a href="mailto:joonsooyoo@jbnu.ac.kr">joonsooyoo@jbnu.ac.kr</a></dd>
-                                <dt>홈페이지</dt><dd><a href="https://das.jbnu.ac.kr" target="_blank" rel="noopener">das.jbnu.ac.kr</a></dd>
+                                <dt>홈페이지</dt><dd><a href="https://das.jbnu.ac.kr" target="_blank" rel="noopener">https://das.jbnu.ac.kr</a></dd>
                             </dl>
                         </div>
                     </article>
                 </div>
             </div>
 
-            <div id="part-time-faculty" class="faculty-group tab-con">
-                <h3 class="faculty-group-title">비전임</h3>
+            <div id="special-faculty" class="faculty-group tab-con" data-tab-group="faculty">
+                <h3 class="faculty-group-title">특ㆍ겸ㆍ객원 교수</h3>
                 <div class="faculty-grid">
-                    <article class="faculty-card">
-                        <img class="faculty-photo" src="../../assets/img/people/won_ic.PNG" alt="원인철 교수">
-                        <div class="faculty-info">
-                            <h4 class="faculty-name">원인철</h4>
-                            <a class="faculty-profile-link" href="#">프로필 보기</a>
-                            <dl class="faculty-detail-list">
-                                <dt>직위</dt><dd>독립교수</dd>
-                                <dt>오피스</dt><dd></dd>
-                                <dt>연구분야</dt><dd></dd>
-                                <dt>전화번호</dt><dd></dd>
-                                <dt>E-mail</dt><dd></dd>
-                                <dt>홈페이지</dt><dd></dd>
-                            </dl>
-                        </div>
-                    </article>
-
                     <article class="faculty-card">
                         <img class="faculty-photo" src="../../assets/img/people/lee_bk.PNG" alt="이병권 교수">
                         <div class="faculty-info">
                             <h4 class="faculty-name">이병권</h4>
                             <a class="faculty-profile-link" href="#">프로필 보기</a>
                             <dl class="faculty-detail-list">
-                                <dt>직위</dt><dd>독립교수</dd>
+                                <dt>직위</dt><dd>초빙교수</dd>
                                 <dt>오피스</dt><dd></dd>
                                 <dt>연구분야</dt><dd>국방연구개발, 국방과학기술</dd>
                                 <dt>전화번호</dt><dd></dd>
@@ -251,7 +237,7 @@
                             <h4 class="faculty-name">김천석</h4>
                             <a class="faculty-profile-link" href="#">프로필 보기</a>
                             <dl class="faculty-detail-list">
-                                <dt>직위</dt><dd>비전임</dd>
+                                <dt>직위</dt><dd>특임교수</dd>
                                 <dt>오피스</dt><dd></dd>
                                 <dt>연구분야</dt><dd></dd>
                                 <dt>전화번호</dt><dd></dd>
@@ -267,7 +253,7 @@
                             <h4 class="faculty-name">이춘주</h4>
                             <a class="faculty-profile-link" href="#">프로필 보기</a>
                             <dl class="faculty-detail-list">
-                                <dt>직위</dt><dd>비전임</dd>
+                                <dt>직위</dt><dd>특임교수</dd>
                                 <dt>오피스</dt><dd></dd>
                                 <dt>연구분야</dt><dd></dd>
                                 <dt>전화번호</dt><dd></dd>
@@ -283,7 +269,28 @@
                             <h4 class="faculty-name">정규헌</h4>
                             <a class="faculty-profile-link" href="#">프로필 보기</a>
                             <dl class="faculty-detail-list">
-                                <dt>직위</dt><dd>비전임</dd>
+                                <dt>직위</dt><dd>특임교수</dd>
+                                <dt>오피스</dt><dd></dd>
+                                <dt>연구분야</dt><dd></dd>
+                                <dt>전화번호</dt><dd></dd>
+                                <dt>E-mail</dt><dd></dd>
+                                <dt>홈페이지</dt><dd></dd>
+                            </dl>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div id="emeritus-faculty" class="faculty-group tab-con" data-tab-group="faculty">
+                <h3 class="faculty-group-title">명예교수</h3>
+                <div class="faculty-grid">
+                    <article class="faculty-card">
+                        <img class="faculty-photo" src="../../assets/img/people/won_ic.PNG" alt="원인철 교수">
+                        <div class="faculty-info">
+                            <h4 class="faculty-name">원인철</h4>
+                            <a class="faculty-profile-link" href="#">프로필 보기</a>
+                            <dl class="faculty-detail-list">
+                                <dt>직위</dt><dd>특임교수</dd>
                                 <dt>오피스</dt><dd></dd>
                                 <dt>연구분야</dt><dd></dd>
                                 <dt>전화번호</dt><dd></dd>

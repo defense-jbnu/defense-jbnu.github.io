@@ -22,6 +22,111 @@
 
 .site-logo img { height: 60px; }
 
+.site-header-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 0;
+}
+
+.site-utility ul {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-utility li {
+    display: flex;
+    align-items: center;
+}
+
+.site-utility li + li::before {
+    content: "";
+    width: 1px;
+    height: 12px;
+    margin: 0 14px;
+    background: #d7dde5;
+}
+
+.site-utility-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1b2635;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.site-utility-link:not([aria-disabled="true"]):hover {
+    color: #0068b7;
+}
+
+.site-utility-link[aria-disabled="true"] {
+    cursor: default;
+    opacity: 0.58;
+}
+
+.site-utility-link::before {
+    display: inline-grid;
+    place-items: center;
+    color: #9aa7b6;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.site-utility-home::before {
+    content: "⌂";
+}
+
+.site-utility-sitemap::before {
+    content: "↪";
+}
+
+.site-utility-english::before {
+    content: "A";
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c5cfda;
+    border-radius: 50%;
+    font-size: 0.68rem;
+    font-weight: 900;
+}
+
+.site-utility-youtube {
+    position: relative;
+    width: 26px;
+    height: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #e62117;
+    color: transparent;
+    opacity: 1;
+}
+
+.site-utility-youtube[aria-disabled="true"] {
+    opacity: 1;
+}
+
+.site-utility-youtube::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid #fff;
+}
+
 /* --- 메인 내비게이션 (1단계) --- */
 .site-nav > ul { 
     display: flex; /* 메인 메뉴만 가로로 배치 */
@@ -188,6 +293,103 @@
     color: #777;
 }
 
+/* --- 사이트맵 --- */
+.sitemap-page {
+    background: #f7f9fc;
+}
+
+.sitemap-hero {
+    padding: 72px 0 32px;
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+}
+
+.sitemap-kicker {
+    margin-bottom: 10px;
+    color: #1689d8;
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.sitemap-hero h2 {
+    color: #07172b;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.sitemap-wrap {
+    padding: 18px 0 90px;
+}
+
+.sitemap-list {
+    display: grid;
+    gap: 34px;
+}
+
+.sitemap-section {
+    padding-top: 30px;
+    border-top: 2px solid #003366;
+}
+
+.sitemap-section h3 {
+    margin-bottom: 22px;
+    color: #003366;
+    font-size: 1.7rem;
+    font-weight: 900;
+    letter-spacing: 0;
+}
+
+.sitemap-section h3 a:hover,
+.sitemap-group a:hover {
+    color: #1689d8;
+}
+
+.sitemap-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px 38px;
+}
+
+.sitemap-group h4 {
+    color: #111827;
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: 0;
+}
+
+.sitemap-group ul {
+    display: grid;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sitemap-group li a {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 7px;
+    color: #4b5f78;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0;
+}
+
+.sitemap-group li a::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: #1689d8;
+    flex: 0 0 auto;
+}
+
 @media (max-width: 1180px) {
     .site-logo img {
         height: 52px;
@@ -200,6 +402,10 @@
     .site-nav > ul > li > a {
         font-size: 1.12rem;
     }
+
+    .sitemap-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 
@@ -211,14 +417,43 @@
         gap: 15px;
     }
 
+    .site-header-menu {
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .site-utility ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px 0;
+    }
+
+    .site-utility li + li::before {
+        margin: 0 10px;
+    }
+
+    .site-utility-link {
+        font-size: 0.82rem;
+    }
+
     .site-logo img { 
         height: 45px; 
     }
 
+    .site-nav {
+        width: 100%;
+        min-width: 0;
+    }
+
     .site-nav > ul {
-        flex-wrap: wrap; /* 메뉴가 많으면 다음 줄로 넘김 */
+        display: grid;
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: repeat(3, max-content);
         justify-content: center;
-        gap: 10px;
+        gap: 10px 16px;
+        max-width: 100%;
     }
 
     .site-nav > ul > li {
@@ -258,5 +493,31 @@
         padding: 30px 20px !important;
         font-size: 1rem !important;
         text-align: center;
+    }
+
+    .sitemap-hero {
+        padding: 48px 0 24px;
+    }
+
+    .sitemap-hero h2 {
+        font-size: 2.35rem;
+    }
+
+    .sitemap-wrap {
+        padding-bottom: 56px;
+    }
+
+    .sitemap-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .sitemap-section {
+        padding-top: 24px;
+    }
+
+    .sitemap-section h3 {
+        margin-bottom: 18px;
+        font-size: 1.45rem;
     }
 }
