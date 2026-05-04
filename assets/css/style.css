@@ -1,8 +1,13 @@
-/* assets/css/style.css */
-/* 하나로 묶어주는 역할 */
-
-
+/* Global stylesheet entry point.
+   Import order matters: base -> site layout -> page groups. */
 @import url('reset.css');
 @import url('layout.css');
+
+/* Main page */
 @import url('home.css');
+
+/* Top-level menu pages */
+@import url('about.css');
+@import url('cluster.css');
+@import url('education.css');
 @import url('people.css');

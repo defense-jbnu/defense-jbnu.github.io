@@ -1,51 +1,66 @@
 const SITE_NAV_ITEMS = [
     {
-        label: '전공안내',
-        href: 'pages/major/advanced.html',
+        label: '연구소 소개',
+        href: 'pages/about/intro.html',
         children: [
-            { label: '첨단방위산업학과', href: 'pages/major/advanced.html' },
-            { label: '방위산업융합전공', href: 'pages/major/convergence.html' },
-            { label: '첨단방산AI융합대학원', href: 'pages/major/graduate.html' },
+            { label: '연구소 소개', href: 'pages/about/intro.html' },
+            { label: '인사말 / 조직도', href: 'pages/about/org.html' },
+            { label: '찾아오시는 길', href: 'pages/about/location.html' },
+        ],
+    },
+    {
+        label: '교육 프로그램',
+        href: 'pages/major/advanced.html',
+        menuType: 'mega',
+        children: [
+            {
+                label: '학부',
+                children: [
+                    { label: '첨단방위산업학과', href: 'pages/major/advanced.html' },
+                    { label: '방위산업융합전공', href: 'pages/major/convergence.html' },
+                ],
+            },
+            {
+                label: '대학원',
+                children: [
+                    { label: '첨단방산AI융합대학원', href: 'pages/major/graduate.html' },
+                    { label: '계약정원제', href: 'pages/major/contract_grad.html' },
+                ],
+            },
+            {
+                label: '프로그램',
+                children: [
+                    { label: 'AI 부트캠프', href: 'pages/program/intro.html' },
+                    { label: '인턴십', href: 'pages/program/apply.html' },
+                ],
+            },
+        ],
+    },
+    {
+        label: '연구 분야',
+        href: '#',
+        children: [
+            { label: 'AI / 사이버보안', href: '#' },
+            { label: '유무인 복합', href: '#' },
+            { label: '우주 / 양자', href: '#' },
+            { label: '센서 / 전자전', href: '#' },
+        ],
+    },
+    {
+        label: '산학협력',
+        href: 'pages/research/joint.html',
+        children: [
+            { label: '협력 기업', href: '#' },
+            { label: '산학연 공동연구', href: 'pages/research/joint.html' },
+            { label: '방산 클러스터', href: 'pages/research/cluster.html' },
         ],
     },
     {
         label: '교직원',
         href: 'pages/people/faculty.html',
         children: [
-            {
-                label: '교수',
-                href: 'pages/people/faculty.html',
-                children: [
-                    { label: '전임', href: 'pages/people/faculty.html#full-time-faculty' },
-                    { label: '비전임', href: 'pages/people/faculty.html#part-time-faculty' },
-                ],
-            },
+            { label: '교수', href: 'pages/people/faculty.html' },
             { label: '직원', href: 'pages/people/staff.html' },
-        ],
-    },
-    {
-        label: '학생 참여 프로그램',
-        href: 'pages/program/intro.html',
-        children: [
-            { label: '프로그램 소개', href: 'pages/program/intro.html' },
-            { label: '프로그램 신청', href: 'pages/program/apply.html' },
-        ],
-    },
-    {
-        label: '연구소소개',
-        href: 'pages/about/intro.html',
-        children: [
-            { label: '국방산업연구소 소개', href: 'pages/about/intro.html' },
-            { label: '인사말 / 조직도', href: 'pages/about/org.html' },
-            { label: '찾아오시는 길', href: 'pages/about/location.html' },
-        ],
-    },
-    {
-        label: '연구 및 프로젝트',
-        href: 'pages/research/cluster.html',
-        children: [
-            { label: '전북방산클러스터', href: 'pages/research/cluster.html' },
-            { label: '산학연 공동연구', href: 'pages/research/joint.html' },
         ],
     },
     {
@@ -90,6 +105,20 @@ function isCurrentLocation(link) {
     return !linkUrl.hash || linkUrl.hash === window.location.hash;
 }
 
+function isAnyChildCurrent(children = [], root) {
+    return children.some(child => {
+        if (child.href) {
+            const link = createNavLink(child, root);
+
+            if (isCurrentPage(link) || isCurrentLocation(link)) {
+                return true;
+            }
+        }
+
+        return isAnyChildCurrent(child.children, root);
+    });
+}
+
 function renderSiteNavigation() {
     const navList = document.querySelector('[data-site-menu]');
 
@@ -104,11 +133,57 @@ function renderSiteNavigation() {
         const menuItem = document.createElement('li');
         menuItem.className = 'has-sub';
 
+        if (item.menuType === 'mega') {
+            menuItem.classList.add('has-mega');
+        }
+
         const topLink = createNavLink(item, root);
         menuItem.appendChild(topLink);
 
         const subMenu = document.createElement('ul');
         subMenu.className = 'sub-menu';
+
+        if (item.menuType === 'mega') {
+            subMenu.classList.add('mega-menu');
+
+            item.children.forEach(column => {
+                const columnItem = document.createElement('li');
+                columnItem.className = 'mega-menu-column';
+
+                const columnTitle = document.createElement('span');
+                columnTitle.className = 'mega-menu-title';
+                columnTitle.textContent = column.label;
+                columnItem.appendChild(columnTitle);
+
+                const columnList = document.createElement('ul');
+                columnList.className = 'mega-menu-list';
+
+                column.children.forEach(child => {
+                    const childItem = document.createElement('li');
+                    const childLink = createNavLink(child, root);
+
+                    if (isCurrentPage(childLink) || isCurrentLocation(childLink)) {
+                        childItem.classList.add('active');
+                        columnItem.classList.add('active');
+                        menuItem.classList.add('active');
+                    }
+
+                    childItem.appendChild(childLink);
+                    columnList.appendChild(childItem);
+                });
+
+                columnItem.appendChild(columnList);
+                subMenu.appendChild(columnItem);
+            });
+
+            if (isAnyChildCurrent(item.children, root)) {
+                menuItem.classList.add('active');
+            }
+
+            menuItem.appendChild(subMenu);
+            fragment.appendChild(menuItem);
+            return;
+        }
 
         item.children.forEach(child => {
             const subMenuItem = document.createElement('li');
