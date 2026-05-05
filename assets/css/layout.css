@@ -219,7 +219,8 @@
 
 /* 마우스 호버 시 표시 */
 .site-nav > ul > li:hover .sub-menu,
-.site-nav > ul > li:focus-within .sub-menu {
+.site-nav > ul > li:focus-within .sub-menu,
+.site-nav > ul > li.is-open .sub-menu {
     display: block;
 }
 
@@ -228,7 +229,8 @@
 }
 
 .site-nav > ul > li.has-mega:hover .mega-menu,
-.site-nav > ul > li.has-mega:focus-within .mega-menu {
+.site-nav > ul > li.has-mega:focus-within .mega-menu,
+.site-nav > ul > li.has-mega.is-open .mega-menu {
     display: grid;
 }
 
@@ -425,8 +427,9 @@
 
     .site-utility ul {
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 8px 0;
+        flex-wrap: nowrap;
+        gap: 0;
+        max-width: 100%;
     }
 
     .site-utility li + li::before {
@@ -444,6 +447,7 @@
     .site-nav {
         width: 100%;
         min-width: 0;
+        position: relative;
     }
 
     .site-nav > ul {
@@ -457,6 +461,7 @@
     }
 
     .site-nav > ul > li {
+        position: static;
         margin-left: 0;
         padding: 0 5px;
     }
@@ -468,7 +473,16 @@
 
     .sub-menu {
         left: 50%;
+        width: min(92vw, 360px);
+        min-width: 0;
+        box-sizing: border-box;
         transform: translateX(-50%);
+    }
+
+    .sub-menu li a {
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: anywhere;
     }
 
     .mega-menu {
@@ -519,5 +533,42 @@
     .sitemap-section h3 {
         margin-bottom: 18px;
         font-size: 1.45rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .site-header .container {
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+    .site-utility li + li::before {
+        height: 10px;
+        margin: 0 6px;
+    }
+
+    .site-utility-link {
+        gap: 4px;
+        font-size: 0.75rem;
+    }
+
+    .site-utility-link::before {
+        font-size: 0.78rem;
+    }
+
+    .site-utility-english::before {
+        width: 14px;
+        height: 14px;
+        font-size: 0.6rem;
+    }
+
+    .site-utility-youtube {
+        width: 24px;
+        height: 18px;
+    }
+
+    .site-utility-youtube::before {
+        left: 9px;
+        top: 4px;
     }
 }

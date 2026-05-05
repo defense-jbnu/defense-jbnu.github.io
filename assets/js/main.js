@@ -197,6 +197,8 @@ function renderSiteNavigation() {
         }
 
         const topLink = createNavLink(item, root);
+        topLink.setAttribute('aria-haspopup', 'true');
+        topLink.setAttribute('aria-expanded', 'false');
         menuItem.appendChild(topLink);
 
         const subMenu = document.createElement('ul');
@@ -286,6 +288,79 @@ function renderSiteNavigation() {
     navList.replaceChildren(fragment);
 }
 
+function setupTouchNavigation() {
+    const nav = document.querySelector('.site-nav');
+
+    if (!nav) {
+        return;
+    }
+
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+    function closeOpenMenus(exceptItem = null) {
+        nav.querySelectorAll('.has-sub.is-open').forEach(item => {
+            if (item === exceptItem) {
+                return;
+            }
+
+            item.classList.remove('is-open');
+            item.firstElementChild?.setAttribute('aria-expanded', 'false');
+        });
+    }
+
+    nav.addEventListener('click', event => {
+        if (canHover.matches) {
+            return;
+        }
+
+        const link = event.target.closest('a');
+
+        if (!link || !nav.contains(link)) {
+            return;
+        }
+
+        const menuItem = link.parentElement;
+
+        if (!menuItem?.classList.contains('has-sub') || menuItem.firstElementChild !== link) {
+            return;
+        }
+
+        if (!menuItem.classList.contains('is-open')) {
+            event.preventDefault();
+            closeOpenMenus(menuItem);
+            menuItem.classList.add('is-open');
+            link.setAttribute('aria-expanded', 'true');
+            return;
+        }
+
+        closeOpenMenus(menuItem);
+    });
+
+    document.addEventListener('click', event => {
+        if (!nav.contains(event.target)) {
+            closeOpenMenus();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeOpenMenus();
+        }
+    });
+
+    function handleHoverChange() {
+        if (canHover.matches) {
+            closeOpenMenus();
+        }
+    }
+
+    if (canHover.addEventListener) {
+        canHover.addEventListener('change', handleHoverChange);
+    } else {
+        canHover.addListener(handleHoverChange);
+    }
+}
+
 function appendSitemapLinks(list, children, root) {
     children.forEach(child => {
         if (child.href) {
@@ -366,6 +441,7 @@ function renderSitemap() {
 document.addEventListener('DOMContentLoaded', () => {
     renderSiteUtilityLinks();
     renderSiteNavigation();
+    setupTouchNavigation();
     renderSitemap();
 
     const tabBtns = document.querySelectorAll('.tab-btn');
