@@ -617,7 +617,7 @@
     /* 2. 교육과정 섹션 겹침 해결 [핵심] */
     .edu-overview { 
         flex-direction: column; /* 가로에서 세로로 변경 */
-        padding: 50px 20px !important; /* 100px 여백을 20px로 대폭 축소 */
+        padding: 50px 6px !important; /* 모바일 카드가 화면 폭을 더 쓰도록 좌우 여백 축소 */
     }
 
     .edu-title-area { 
@@ -639,16 +639,46 @@
     .edu-card-area { 
         flex: none;
         width: 100%;
-        --card-gap: 14px;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+        --card-gap: 6px;
     }
 
     .card-list { 
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
         gap: var(--card-gap); 
     }
 
     .card-item {
-        height: 280px;
+        grid-column: span 2;
+        height: 186px;
+    }
+
+    .card-item:nth-child(n + 4) {
+        grid-column: span 3;
+    }
+
+    .card-overlay {
+        min-height: 64%;
+        padding: 14px 7px;
+    }
+
+    .card-overlay .category {
+        font-size: clamp(0.58rem, 2.45vw, 0.72rem);
+        line-height: 1.15;
+        white-space: nowrap;
+    }
+
+    .card-overlay h5 {
+        font-size: clamp(0.8rem, 3.35vw, 1.05rem);
+        line-height: 1.22;
+        word-break: keep-all;
+    }
+
+    .card-overlay h5 small {
+        margin-top: 4px;
+        font-size: clamp(0.68rem, 2.65vw, 0.78rem);
     }
 
     /* 3. 소식(News) 섹션 겹침 해결 */
@@ -661,33 +691,109 @@
     .news-info { 
         position: static !important; /* sticky 해제 */
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 2px;
+    }
+    .news-info {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 16px 12px;
+    }
+    .news-main-title {
+        margin-bottom: 0;
+        font-size: 2.2rem;
+    }
+    .view-more-top {
+        margin-bottom: 0;
+        font-size: 0.88rem;
+        white-space: nowrap;
+    }
+    .view-more-top .arrow-circle {
+        width: 22px;
+        height: 22px;
+        font-size: 0.72rem;
     }
     .news-tab-menu {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 10px;
+        grid-column: 1 / -1;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
-    .tab-btn { 
+    .news-tab-menu .tab-btn { 
         width: calc(50% - 5px); /* 버튼을 2개씩 배치 */
         padding: 12px 10px;
         font-size: 1rem;
     }
     .news-list-container {
         width: 100%;
+        margin-top: 0;
+    }
+    .news-tab-menu .tab-btn {
+        flex: 1 1 0;
+        width: auto;
+        min-width: 0;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+    .news-item a {
+        gap: 12px;
+        padding: 16px 0;
+    }
+    .item-date {
+        min-width: 58px;
+    }
+    .item-date .day {
+        font-size: 1.45rem;
+    }
+    .item-date .year-month {
+        font-size: 0.78rem;
     }
     .item-subject {
         font-size: 1.1rem !important;
     }
+    .item-view {
+        display: none;
+    }
 
     /* 4. 프로그램/링크 섹션 4열 -> 1열 */
     .program-header {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
-        gap: 20px;
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+    .program-main-title {
+        flex: 1 1 auto;
+        min-width: 0;
+        font-size: 1.16rem;
+        line-height: 1.28;
+    }
+    .btn-view-more {
+        flex: 0 0 auto;
+        margin-top: 4px;
+        font-size: 0.86rem;
+        white-space: nowrap;
     }
     .program-grid { 
-        grid-template-columns: 1fr !important; 
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 18px 14px;
+    }
+    .program-card .card-img {
+        height: 150px;
+        margin-bottom: 12px;
+    }
+    .program-card .card-txt h5 {
+        margin-bottom: 6px;
+        font-size: 1rem;
+        line-height: 1.25;
+        word-break: keep-all;
+    }
+    .program-card .card-txt p {
+        font-size: 0.78rem;
+        line-height: 1.45;
     }
 
     /* 5. 하단 배너 패딩 조정 */
