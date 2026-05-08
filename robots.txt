@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://das.jbnu.ac.kr/defense-jbnu.github.io/sitemap.xml
