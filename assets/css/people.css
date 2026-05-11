@@ -139,6 +139,10 @@
     border-radius: 2px;
 }
 
+.faculty-participating-title {
+    margin-top: 42px;
+}
+
 .faculty-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -164,6 +168,16 @@
     object-fit: cover;
     background: #e9edf3;
     border: 1px solid #e2e6ed;
+}
+
+.faculty-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #b8c7d6;
+    color: #6a7888;
+    font-size: 1rem;
+    font-weight: 850;
 }
 
 .faculty-info {
