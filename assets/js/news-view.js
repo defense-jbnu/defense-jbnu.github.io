@@ -1,5 +1,6 @@
 const newsPostElement = document.getElementById('news-post');
 const newsRepoRoot = '../..';
+const newsSiteUrl = 'https://defense.jbnu.ac.kr';
 
 function escapeNewsViewHtml(value = '') {
     return String(value)
@@ -72,6 +73,66 @@ function renderNewsExternalLink(post) {
     `;
 }
 
+function getNewsDescription(post) {
+    const content = Array.isArray(post.summary || post.content)
+        ? (post.summary || post.content).join(' ')
+        : (post.summary || post.content || '');
+
+    return String(content).replace(/\s+/g, ' ').trim().slice(0, 150)
+        || '전북대학교 K-방위산업연구소 언론보도 상세 내용입니다.';
+}
+
+function setNewsMeta(selector, attribute, value) {
+    const element = document.querySelector(selector);
+
+    if (element) {
+        element.setAttribute(attribute, value);
+    }
+}
+
+function updateNewsSeo(post) {
+    const params = new URLSearchParams(window.location.search);
+    const postId = params.get('post') || '';
+    const url = `${newsSiteUrl}/pages/community/news-view.html?post=${encodeURIComponent(postId)}`;
+    const title = `${post.title} | 전북대학교 K-방위산업연구소`;
+    const description = getNewsDescription(post);
+
+    document.title = title;
+    setNewsMeta('meta[name="description"]', 'content', description);
+    setNewsMeta('link[rel="canonical"]', 'href', url);
+    setNewsMeta('meta[property="og:title"]', 'content', title);
+    setNewsMeta('meta[property="og:description"]', 'content', description);
+    setNewsMeta('meta[property="og:url"]', 'content', url);
+    setNewsMeta('meta[property="og:type"]', 'content', 'article');
+    setNewsMeta('meta[name="twitter:title"]', 'content', title);
+    setNewsMeta('meta[name="twitter:description"]', 'content', description);
+
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'NewsArticle',
+        headline: post.title,
+        description,
+        datePublished: post.date || undefined,
+        url,
+        inLanguage: 'ko-KR',
+        publisher: {
+            '@type': 'Organization',
+            name: '전북대학교 K-방위산업연구소',
+            url: newsSiteUrl,
+        },
+    };
+    let schema = document.getElementById('dynamic-post-jsonld');
+
+    if (!schema) {
+        schema = document.createElement('script');
+        schema.type = 'application/ld+json';
+        schema.id = 'dynamic-post-jsonld';
+        document.head.appendChild(schema);
+    }
+
+    schema.textContent = JSON.stringify(articleSchema);
+}
+
 function renderNewsPost(post) {
     const image = post.image ? `
         <figure class="community-post-image">
@@ -101,7 +162,7 @@ function renderNewsPost(post) {
         </footer>
     `;
 
-    document.title = `${post.title} | 전북대학교 K-방위산업연구소`;
+    updateNewsSeo(post);
 }
 
 async function loadNewsPost() {

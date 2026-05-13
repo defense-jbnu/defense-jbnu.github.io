@@ -1,5 +1,6 @@
 const columnPostElement = document.getElementById('column-post');
 const columnRepoRoot = '../..';
+const columnSiteUrl = 'https://defense.jbnu.ac.kr';
 
 function escapeColumnViewHtml(value = '') {
     return String(value)
@@ -72,6 +73,67 @@ function renderColumnExternalLink(post) {
     `;
 }
 
+function getColumnDescription(post) {
+    const content = Array.isArray(post.summary || post.content)
+        ? (post.summary || post.content).join(' ')
+        : (post.summary || post.content || '');
+
+    return String(content).replace(/\s+/g, ' ').trim().slice(0, 150)
+        || '전북대학교 K-방위산업연구소 기고·칼럼 상세 내용입니다.';
+}
+
+function setColumnMeta(selector, attribute, value) {
+    const element = document.querySelector(selector);
+
+    if (element) {
+        element.setAttribute(attribute, value);
+    }
+}
+
+function updateColumnSeo(post) {
+    const params = new URLSearchParams(window.location.search);
+    const postId = params.get('post') || '';
+    const url = `${columnSiteUrl}/pages/community/column-view.html?post=${encodeURIComponent(postId)}`;
+    const title = `${post.title} | 전북대학교 K-방위산업연구소`;
+    const description = getColumnDescription(post);
+
+    document.title = title;
+    setColumnMeta('meta[name="description"]', 'content', description);
+    setColumnMeta('link[rel="canonical"]', 'href', url);
+    setColumnMeta('meta[property="og:title"]', 'content', title);
+    setColumnMeta('meta[property="og:description"]', 'content', description);
+    setColumnMeta('meta[property="og:url"]', 'content', url);
+    setColumnMeta('meta[property="og:type"]', 'content', 'article');
+    setColumnMeta('meta[name="twitter:title"]', 'content', title);
+    setColumnMeta('meta[name="twitter:description"]', 'content', description);
+
+    const articleSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: post.title,
+        description,
+        datePublished: post.date || undefined,
+        author: post.author ? { '@type': 'Person', name: post.author } : undefined,
+        url,
+        inLanguage: 'ko-KR',
+        publisher: {
+            '@type': 'Organization',
+            name: '전북대학교 K-방위산업연구소',
+            url: columnSiteUrl,
+        },
+    };
+    let schema = document.getElementById('dynamic-post-jsonld');
+
+    if (!schema) {
+        schema = document.createElement('script');
+        schema.type = 'application/ld+json';
+        schema.id = 'dynamic-post-jsonld';
+        document.head.appendChild(schema);
+    }
+
+    schema.textContent = JSON.stringify(articleSchema);
+}
+
 function renderColumnPost(post) {
     const image = post.image ? `
         <figure class="community-post-image">
@@ -102,7 +164,7 @@ function renderColumnPost(post) {
         </footer>
     `;
 
-    document.title = `${post.title} | 전북대학교 K-방위산업연구소`;
+    updateColumnSeo(post);
 }
 
 async function loadColumnPost() {
