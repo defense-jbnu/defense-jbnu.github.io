@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBNU K-Defense Notice</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #101624;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .popup-carousel {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: #101624;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .popup-slide {
+            display: none;
+            width: 100%;
+            flex: 1 1 auto;
+            min-height: 0;
+            place-items: center;
+            padding: 10px;
+            overflow: hidden;
+        }
+
+        .popup-slide.is-active {
+            display: grid;
+        }
+
+        .popup-slide a {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            place-items: center;
+        }
+
+        .popup-slide img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .popup-controls {
+            display: grid;
+            grid-template-columns: 44px 1fr 44px;
+            align-items: center;
+            min-height: 52px;
+            background: rgba(16, 22, 36, 0.96);
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .popup-button {
+            width: 44px;
+            height: 52px;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .popup-button:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .popup-status {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0;
+        }
+
+        .popup-preferences {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 46px;
+            background: #fff;
+            border-top: 1px solid rgba(16, 22, 36, 0.12);
+        }
+
+        .popup-preference-button {
+            border: 0;
+            background: #fff;
+            color: #263247;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .popup-preference-button + .popup-preference-button {
+            border-left: 1px solid rgba(16, 22, 36, 0.12);
+        }
+
+        .popup-preference-button:hover {
+            background: #f2f5f9;
+        }
+    </style>
+</head>
+<body>
+    <main class="popup-carousel" aria-label="Main notice popup">
+        <div class="popup-slide is-active">
+            <a href="../../pages/program/defense-manager.html" target="_top">
+                <img src="1.png" alt="2026 전북대학교 국방사업관리사 자격증 취득 교육 안내 1">
+            </a>
+        </div>
+        <div class="popup-slide">
+            <a href="../../pages/program/defense-manager.html" target="_top">
+                <img src="2.png" alt="2026 전북대학교 국방사업관리사 자격증 취득 교육 안내 2">
+            </a>
+        </div>
+        <div class="popup-slide">
+            <a href="../../pages/program/defense-manager.html" target="_top">
+                <img src="3.png" alt="2026 전북대학교 국방사업관리사 자격증 취득 교육 안내 3">
+            </a>
+        </div>
+        <div class="popup-slide">
+            <a href="../../pages/program/defense-manager.html" target="_top">
+                <img src="4.png" alt="2026 전북대학교 국방사업관리사 자격증 취득 교육 안내 4">
+            </a>
+        </div>
+
+        <nav class="popup-controls" aria-label="Popup controls">
+            <button class="popup-button" type="button" data-popup-prev aria-label="Previous notice">&lt;</button>
+            <div class="popup-status" aria-live="polite">
+                <span data-popup-current>1</span> / <span data-popup-total>4</span>
+            </div>
+            <button class="popup-button" type="button" data-popup-next aria-label="Next notice">&gt;</button>
+        </nav>
+
+        <div class="popup-preferences">
+            <button class="popup-preference-button" type="button" data-popup-hide-today>오늘 하루 보지 않기</button>
+            <button class="popup-preference-button" type="button" data-popup-hide-forever>다시 보지 않기</button>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const storageKey = 'jbnuKDefenseMainPopupHiddenUntil';
+            const foreverValue = 'forever';
+            const slides = Array.from(document.querySelectorAll('.popup-slide'));
+            const current = document.querySelector('[data-popup-current]');
+            const total = document.querySelector('[data-popup-total]');
+            const prev = document.querySelector('[data-popup-prev]');
+            const next = document.querySelector('[data-popup-next]');
+            const hideToday = document.querySelector('[data-popup-hide-today]');
+            const hideForever = document.querySelector('[data-popup-hide-forever]');
+            let activeIndex = 0;
+            let timer = null;
+
+            if (total) {
+                total.textContent = String(slides.length);
+            }
+
+            function showSlide(index) {
+                activeIndex = (index + slides.length) % slides.length;
+
+                slides.forEach((slide, slideIndex) => {
+                    slide.classList.toggle('is-active', slideIndex === activeIndex);
+                });
+
+                if (current) {
+                    current.textContent = String(activeIndex + 1);
+                }
+            }
+
+            function startTimer() {
+                window.clearInterval(timer);
+                timer = window.setInterval(() => showSlide(activeIndex + 1), 3500);
+            }
+
+            function getTomorrowStart() {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0);
+                return tomorrow.getTime();
+            }
+
+            function closePopup() {
+                if (window.opener) {
+                    window.close();
+                    return;
+                }
+
+                const targetOrigin = window.location.origin === 'null' ? '*' : window.location.origin;
+                window.parent.postMessage({ type: 'jbnu-main-popup-close' }, targetOrigin);
+            }
+
+            hideToday?.addEventListener('click', () => {
+                localStorage.setItem(storageKey, String(getTomorrowStart()));
+                closePopup();
+            });
+
+            hideForever?.addEventListener('click', () => {
+                localStorage.setItem(storageKey, foreverValue);
+                closePopup();
+            });
+
+            prev?.addEventListener('click', () => {
+                showSlide(activeIndex - 1);
+                startTimer();
+            });
+
+            next?.addEventListener('click', () => {
+                showSlide(activeIndex + 1);
+                startTimer();
+            });
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'ArrowLeft') {
+                    showSlide(activeIndex - 1);
+                    startTimer();
+                }
+
+                if (event.key === 'ArrowRight') {
+                    showSlide(activeIndex + 1);
+                    startTimer();
+                }
+            });
+
+            showSlide(0);
+            startTimer();
+        })();
+    </script>
+</body>
+</html>

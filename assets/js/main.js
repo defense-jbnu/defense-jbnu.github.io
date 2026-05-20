@@ -31,6 +31,7 @@ const SITE_NAV_ITEMS = [
                 label: '프로그램',
                 children: [
                     { label: 'AI 부트캠프', href: 'pages/program/intro.html' },
+                    { label: '국방산업관리사', href: 'pages/program/defense-manager.html' },
                     { label: '인턴십', href: 'pages/program/apply.html' },
                 ],
             },

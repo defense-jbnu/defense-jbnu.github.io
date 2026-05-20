@@ -65,6 +65,12 @@
         url('../img/main/space_satellite.jpg') center / cover;
 }
 
+.education-hero-defense-manager {
+    background:
+        linear-gradient(rgba(8, 19, 34, 0.3), rgba(0, 51, 102, 0.68)),
+        url('../img/main/missile.jpg') center / cover;
+}
+
 .education-tabs {
     position: sticky;
     top: 84px;
@@ -730,6 +736,118 @@
     line-height: 1.35;
     text-align: center;
     word-break: keep-all;
+}
+
+.defense-manager-page .education-section {
+    background: #f8fafc;
+}
+
+.manager-highlight-grid,
+.manager-info-grid,
+.manager-apply-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.manager-highlight-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.manager-highlight-grid article,
+.manager-info-grid article,
+.manager-apply-box article {
+    min-height: 142px;
+    padding: 28px;
+    border: 1px solid #dbe6f1;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.manager-highlight-grid article {
+    background: #f8fbff;
+}
+
+.manager-highlight-grid strong,
+.manager-apply-box strong {
+    display: block;
+    margin-bottom: 12px;
+    color: #10233f;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.35;
+    word-break: keep-all;
+}
+
+.manager-highlight-grid p,
+.manager-info-grid p,
+.manager-apply-box p {
+    color: #38495e;
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.7;
+}
+
+.manager-topic-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.manager-topic-list span {
+    display: flex;
+    min-height: 70px;
+    padding: 14px 18px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 91, 172, 0.24);
+    border-radius: 8px;
+    background: #eef6fd;
+    color: #10233f;
+    font-size: 1.04rem;
+    font-weight: 800;
+    line-height: 1.35;
+    text-align: center;
+    word-break: keep-all;
+}
+
+.manager-info-grid h4 {
+    margin-bottom: 18px;
+    color: #003366;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+
+.manager-info-grid small,
+.manager-apply-box small {
+    display: block;
+    margin-top: 12px;
+    color: #6b7787;
+    font-size: 0.96rem;
+    font-weight: 700;
+    line-height: 1.55;
+    word-break: keep-all;
+}
+
+.manager-apply-box a {
+    color: #005bac;
+    font-weight: 800;
+}
+
+.manager-popup-image {
+    margin: 28px auto 0;
+    max-width: 860px;
+    overflow: hidden;
+    border: 1px solid #dbe6f1;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 14px 34px rgba(16, 43, 74, 0.08);
+}
+
+.manager-popup-image img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .education-hero-graduate {
@@ -1492,7 +1610,11 @@
     .bootcamp-focus-grid,
     .bootcamp-benefit-grid,
     .bootcamp-talent-grid,
-    .bootcamp-track-list {
+    .bootcamp-track-list,
+    .manager-highlight-grid,
+    .manager-info-grid,
+    .manager-apply-box,
+    .manager-topic-list {
         grid-template-columns: 1fr;
     }
 
@@ -1652,7 +1774,10 @@
 
     .bootcamp-focus-grid article,
     .bootcamp-benefit-grid article,
-    .bootcamp-talent-grid article {
+    .bootcamp-talent-grid article,
+    .manager-highlight-grid article,
+    .manager-info-grid article,
+    .manager-apply-box article {
         min-height: auto;
         padding: 22px 20px;
     }

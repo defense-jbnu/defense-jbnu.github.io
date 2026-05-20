@@ -25,6 +25,7 @@ PRIORITY = {
     "pages/major/graduate.html": "0.8",
     "pages/major/contract_grad.html": "0.7",
     "pages/program/intro.html": "0.7",
+    "pages/program/defense-manager.html": "0.7",
     "pages/program/apply.html": "0.7",
     "pages/research/fields.html": "0.8",
     "pages/research/cluster.html": "0.8",
