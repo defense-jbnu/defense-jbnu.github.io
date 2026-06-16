@@ -1,9 +1,198 @@
 [
     {
-        "id": 7,
+        "id": 34,
+        "title": "“전북대, K방산·AI 첨단산업 이끌 국가 전략 인재 허브 될 것”",
+        "source": "중앙일보",
+        "date": "2026.06.12",
+        "link": "news-view.html?post=view_34"
+    },
+    {
+        "id": 33,
+        "title": "“전북대, K-방산 거점 도약…기술과 산업 잇는 ‘국가전략 인재 허브’...",
+        "source": "중앙일보",
+        "date": "2026.06.11",
+        "link": "news-view.html?post=view_33"
+    },
+    {
+        "id": 32,
+        "title": "전북대, ‘학부생부터 글로벌 방산기업과 연결’…K-방산 인재양성 새 ...",
+        "source": "브릿지경제",
+        "date": "2026.05.26",
+        "link": "news-view.html?post=view_32"
+    },
+    {
+        "id": 31,
+        "title": "전북대-탈레스코리아, 글로벌 방산·우주 인재양성 협력 '속도'",
+        "source": "전자신문",
+        "date": "2026.05.26",
+        "link": "news-view.html?post=view_31"
+    },
+    {
+        "id": 30,
+        "title": "전북대·탈레스코리아 \"방산·우주 인재 양성 협력 확대\"",
+        "source": "뉴시스",
+        "date": "2026.05.26",
+        "link": "news-view.html?post=view_30"
+    },
+    {
+        "id": 29,
+        "title": "전북대학교, 방사청 '국방사업관리사' 교육기관 2년 연속 선정…방산 전...",
+        "source": "한국강사신문",
+        "date": "2026.05.18",
+        "link": "news-view.html?post=view_29"
+    },
+    {
+        "id": 28,
+        "title": "'방산 전문인력' 전북서 키운다···전북대, 교육과정 재학생·현장 투...",
+        "source": "이뉴스투데이",
+        "date": "2026.05.15",
+        "link": "news-view.html?post=view_28"
+    },
+    {
+        "id": 27,
+        "title": "“방산 인재 키운다”…전북대, 국방사업관리사 교육 2년 연속 맡는다",
+        "source": "프레시안",
+        "date": "2026.05.15",
+        "link": "news-view.html?post=view_27"
+    },
+    {
+        "id": 26,
+        "title": "전북대, K-방산 도약 이끌 국방사업관리 전문 인력 양성 박차",
+        "source": "한국대학신문",
+        "date": "2026.05.15",
+        "link": "news-view.html?post=view_26"
+    },
+    {
+        "id": 25,
+        "title": "전북대, ‘K-방산 인큐베이터’ 거점 부상",
+        "source": "동아일보",
+        "date": "2026.04.30",
+        "link": "news-view.html?post=view_25"
+    },
+    {
+        "id": 24,
         "title": "전북대, 기관·기업과 손잡고 K 방위산업 핵심 거점 도약",
         "source": "동아일보",
         "date": "2026.04.29",
+        "link": "news-view.html?post=view_24"
+    },
+    {
+        "id": 23,
+        "title": "전북대-한화시스템, 첨단 방산기술 협력 본격화",
+        "source": "교수신문",
+        "date": "2026.04.27",
+        "link": "news-view.html?post=view_23"
+    },
+    {
+        "id": 22,
+        "title": "전북대, 피지컬AI 국방·항공우주·로봇·자율제조 분야 최신 기술 공유",
+        "source": "전자신문",
+        "date": "2026.04.24",
+        "link": "news-view.html?post=view_22"
+    },
+    {
+        "id": 21,
+        "title": "전북대 주도 AI 학술대회 무주서 열렸다…국방·로봇 핵심 기술 총집결",
+        "source": "베타뉴스",
+        "date": "2026.04.24",
+        "link": "news-view.html?post=view_21"
+    },
+    {
+        "id": 20,
+        "title": "전북대, 글로벌 방산기업과 손잡다…인재양성 '직결 모델' 시동",
+        "source": "전민일보",
+        "date": "2026.04.19",
+        "link": "news-view.html?post=view_20"
+    },
+    {
+        "id": 19,
+        "title": "전북대·국방과학연구소 업무협약 체결",
+        "source": "내일신문",
+        "date": "2026.04.18",
+        "link": "news-view.html?post=view_19"
+    },
+    {
+        "id": 18,
+        "title": "전북대, 유럽 방산기업 탈레스와 방산 협력 체결",
+        "source": "내일신문",
+        "date": "2026.04.18",
+        "link": "news-view.html?post=view_18"
+    },
+    {
+        "id": 17,
+        "title": "전북대-국방과학연구소, 공동 연구·인재 양성 협약",
+        "source": "KBS",
+        "date": "2026.04.17",
+        "link": "news-view.html?post=view_17"
+    },
+    {
+        "id": 16,
+        "title": "전북대, 탈레스와 손잡고 글로벌 방산 인재 키운다",
+        "source": "뉴시스",
+        "date": "2026.04.17",
+        "link": "news-view.html?post=view_16"
+    },
+    {
+        "id": 15,
+        "title": "글로벌 방산기업 탈레스, 전북대와 인재양성 협약…장학금·인턴십 ‘연...",
+        "source": "프레시안",
+        "date": "2026.04.17",
+        "link": "news-view.html?post=view_15"
+    },
+    {
+        "id": 14,
+        "title": "전북대, 글로벌 방산 기업과 ‘전략적 협력’",
+        "source": "쿠키뉴스",
+        "date": "2026.04.17",
+        "link": "news-view.html?post=view_14"
+    },
+    {
+        "id": 13,
+        "title": "전북대, 유럽 대표하는 방산기업 탈레스와 맞손 '글로벌 인재 육성'",
+        "source": "아주경제",
+        "date": "2026.04.17",
+        "link": "news-view.html?post=view_13"
+    },
+    {
+        "id": 12,
+        "title": "전북대, 글로벌 방산기업 탈레스와 ‘전략적 협력’ 나서",
+        "source": "뉴스투데이",
+        "date": "2026.04.17",
+        "link": "news-view.html?post=view_12"
+    },
+    {
+        "id": 11,
+        "title": "전북대-국방과학연구소, 미래 국방과학기술 핵심 인재 양성 '맞손'",
+        "source": "전북도민일보",
+        "date": "2026.04.16",
+        "link": "news-view.html?post=view_11"
+    },
+    {
+        "id": 10,
+        "title": "‘방위산업 육성 나선’ 전북대, 국방과학연구소와 ‘국방 R&D·인재양성...",
+        "source": "프레시안",
+        "date": "2026.04.16",
+        "link": "news-view.html?post=view_10"
+    },
+    {
+        "id": 9,
+        "title": "전북대-국방과학연구소, 미래 국방과학기술 이끌 협력 나선다",
+        "source": "뉴스투데이",
+        "date": "2026.04.16",
+        "link": "news-view.html?post=view_09"
+    },
+    {
+        "id": 8,
+        "title": "전북대-국방과학연구소 '첨단 국방기술 연구' 맞손",
+        "source": "뉴스1",
+        "date": "2026.04.16",
+        "link": "news-view.html?post=view_08"
+    },
+    {
+        "id": 7,
+        "title": "전북대·국방과학硏, 국방기술 협력 '맞손'…AI·무인체계 인재 양성",
+        "source": "뉴시스",
+        "date": "2026.04.16",
         "link": "news-view.html?post=view_07"
     },
     {

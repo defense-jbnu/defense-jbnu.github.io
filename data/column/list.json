@@ -1,23 +1,58 @@
 [
     {
-        "id": 8,
+        "id": 13,
+        "title": "[기고] ‘서울대 10개 만들기’, 왜 전북대학교여야 하는가",
+        "author": "",
+        "date": "2026.06.14",
+        "link": "column-view.html?post=view_13"
+    },
+    {
+        "id": 12,
+        "title": "K방산 수출, 이제는 정보다 [기고]",
+        "author": "",
+        "date": "2026.04.23",
+        "link": "column-view.html?post=view_12"
+    },
+    {
+        "id": 11,
         "title": "\"장교가 비리집단이냐\" 최대 위기… 방사청이 극복한 비결은?",
         "author": "강은호 전북대 교수(전 방위사업청장)",
         "date": "2026.04.21",
+        "link": "column-view.html?post=view_11"
+    },
+    {
+        "id": 10,
+        "title": "전쟁은 '생산능력'이다 : 미국의 무기 부족이 던지는 경고[기고]",
+        "author": "",
+        "date": "2026.04.20",
+        "link": "column-view.html?post=view_10"
+    },
+    {
+        "id": 9,
+        "title": "불가피한 시행착오도 방산 비리로 매도…무죄 판결 장교의 명예회복 방법은?",
+        "author": "강은호 전북대 교수(전 방위사업청장)",
+        "date": "2026.04.07",
+        "link": "column-view.html?post=view_09"
+    },
+    {
+        "id": 8,
+        "title": "첨단항공엔진, 지금 시작하지 않으면 골든타임 놓친다 [기고]",
+        "author": "",
+        "date": "2026.03.30",
         "link": "column-view.html?post=view_08"
     },
     {
         "id": 7,
-        "title": "불가피한 시행착오도 방산 비리로 매도…무죄 판결 장교의 명예회복 방법은?",
+        "title": "\"2억5천만→10억 달러\"…방사청 출범 2년 만에 방산수출 4배 뛴 이유는",
         "author": "강은호 전북대 교수(전 방위사업청장)",
-        "date": "2026.04.07",
+        "date": "2026.03.24",
         "link": "column-view.html?post=view_07"
     },
     {
         "id": 6,
-        "title": "\"2억5천만→10억 달러\"…방사청 출범 2년 만에 방산수출 4배 뛴 이유는",
-        "author": "강은호 전북대 교수(전 방위사업청장)",
-        "date": "2026.03.24",
+        "title": "[알립니다] 제2회 국방방산전략포럼 개최합니다",
+        "author": "",
+        "date": "2026.03.22",
         "link": "column-view.html?post=view_06"
     },
     {
