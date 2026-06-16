@@ -55,11 +55,11 @@
 }
 
 .about-intro-slide-1 {
-    background-image: url('../img/about/soldier_intro.jpg');
+    background-image: url('../img/about/helicop.webp');
 }
 
 .about-intro-slide-2 {
-    background-image: url('../img/about/research_intro.jpg');
+    background-image: url('../img/about/research_intro_260616.webp');
     animation-delay: 6s;
 }
 
@@ -212,7 +212,7 @@
     padding: 86px 0 78px;
     background:
         linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.76)),
-        url('../img/about/research_intro.jpg') center / cover;
+        url('../img/about/research_intro_260616.webp') center / cover;
     color: #fff;
     text-align: center;
 }

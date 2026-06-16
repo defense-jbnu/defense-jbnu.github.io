@@ -7,7 +7,7 @@ from pathlib import Path
 
 SITE_URL = "https://defense.jbnu.ac.kr"
 SITE_NAME = "전북대학교 K-방위산업연구소"
-OG_IMAGE = f"{SITE_URL}/assets/img/main/main_bg.jpg"
+OG_IMAGE = f"{SITE_URL}/assets/img/main/main_bg_260616.webp"
 ROOT = Path(__file__).resolve().parents[1]
 
 META = {
