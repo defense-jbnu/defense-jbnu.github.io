@@ -22,7 +22,7 @@
     width: 100%; height: 100%;
     
     /* 경로 확인: CSS 파일 기준이므로 ../img/ 가 맞습니다 */
-    background-image: url('../img/main/main_bg.jpg'); 
+    background-image: url('../img/main/main_bg_260616.webp'); 
     background-size: cover;
     background-position: center;
     z-index: -1; /* 텍스트(hero-content)보다 뒤로 보냄 */
@@ -60,11 +60,11 @@
 }
 
 .hero-slide-1 {
-    background-image: url('../img/about/research_intro.jpg');
+    background-image: url('../img/main/main_bg_260616.webp');
 }
 
 .hero-slide-2 {
-    background-image: url('../img/about/soldier_intro.jpg');
+    background-image: url('../img/main/main_bg_260616.webp');
     animation-delay: 6s;
 }
 
