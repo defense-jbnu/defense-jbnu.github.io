@@ -1,11 +1,11 @@
 (function () {
-    const popupUrl = 'popup/%EA%B5%AD%EB%B0%A9%EC%82%B0%EC%97%85%EA%B4%80%EB%A6%AC%EC%82%AC%20260520/index.html';
+    const popupUrl = 'popup/%EA%B5%AD%EB%B0%A9%EC%82%B0%EC%97%85%EA%B4%80%EB%A6%AC%EC%82%AC_260721/index.html';
     const popupName = 'jbnuKDefenseMainPopup';
-    const storageKey = 'jbnuKDefenseMainPopupHiddenUntil';
+    const storageKey = 'jbnuKDefenseMainPopup260721HiddenUntil';
     const foreverValue = 'forever';
-    const displayEndAt = new Date('2026-06-20T23:59:59+09:00').getTime();
+    const displayEndAt = new Date('2026-08-04T23:59:59+09:00').getTime();
     const width = 560;
-    const height = 740;
+    const height = 840;
 
     function shouldHidePopup() {
         if (Date.now() > displayEndAt) {

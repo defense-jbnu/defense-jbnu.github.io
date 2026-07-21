@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBNU K-Defense Notice</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #101624;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .popup-notice {
+            width: 100vw;
+            height: 100vh;
+            background: #101624;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .popup-image-link {
+            display: grid;
+            flex: 1 1 auto;
+            min-height: 0;
+            width: 100%;
+            padding: 10px;
+            place-items: center;
+        }
+
+        .popup-image-link img {
+            display: block;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            background: #fff;
+        }
+
+        .popup-preferences {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 46px;
+            background: #fff;
+            border-top: 1px solid rgba(16, 22, 36, 0.12);
+        }
+
+        .popup-preference-button {
+            border: 0;
+            background: #fff;
+            color: #263247;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .popup-preference-button + .popup-preference-button {
+            border-left: 1px solid rgba(16, 22, 36, 0.12);
+        }
+
+        .popup-preference-button:hover {
+            background: #f2f5f9;
+        }
+    </style>
+</head>
+<body>
+    <main class="popup-notice" aria-label="Main notice popup">
+        <a class="popup-image-link" href="../../pages/program/defense-manager.html" target="_top">
+            <img src="hongbo_260721.png" alt="2026 전북대학교 국방산업관리사 교육 안내">
+        </a>
+
+        <div class="popup-preferences">
+            <button class="popup-preference-button" type="button" data-popup-hide-today>오늘 하루 보지 않기</button>
+            <button class="popup-preference-button" type="button" data-popup-hide-forever>다시 보지 않기</button>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const storageKey = 'jbnuKDefenseMainPopup260721HiddenUntil';
+            const foreverValue = 'forever';
+            const hideToday = document.querySelector('[data-popup-hide-today]');
+            const hideForever = document.querySelector('[data-popup-hide-forever]');
+
+            function getTomorrowStart() {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0);
+                return tomorrow.getTime();
+            }
+
+            function closePopup() {
+                if (window.opener) {
+                    window.close();
+                    return;
+                }
+
+                const targetOrigin = window.location.origin === 'null' ? '*' : window.location.origin;
+                window.parent.postMessage({ type: 'jbnu-main-popup-close' }, targetOrigin);
+            }
+
+            hideToday?.addEventListener('click', () => {
+                localStorage.setItem(storageKey, String(getTomorrowStart()));
+                closePopup();
+            });
+
+            hideForever?.addEventListener('click', () => {
+                localStorage.setItem(storageKey, foreverValue);
+                closePopup();
+            });
+        })();
+    </script>
+</body>
+</html>
