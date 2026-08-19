@@ -1,5 +1,47 @@
 [
     {
+        "id": 20,
+        "title": "피라미드 상공까지 열어준 이집트... K9으로 쌓인 신뢰의 무게",
+        "author": "강은호 전북대 교수(전 방위사업청장)",
+        "date": "2026.08.16",
+        "link": "column-view.html?post=view_20"
+    },
+    {
+        "id": 19,
+        "title": "KAI 민영화, 지분매각이 아닌 국가산업전략의 문제다 [기고]",
+        "author": "장원준 전북대학교 첨단방산학과 교수",
+        "date": "2026.08.14",
+        "link": "column-view.html?post=view_19"
+    },
+    {
+        "id": 18,
+        "title": "[칼럼] 무기수출 족쇄 푼 일본, K-방산은 준비됐나",
+        "author": "장원준 전북대학교 첨단방산학과 교수",
+        "date": "2026.08.13",
+        "link": "column-view.html?post=view_18"
+    },
+    {
+        "id": 17,
+        "title": "[장원준 칼럼] 방산 4대 강국 도약, 세계적 방산 클러스터 조성이 답이다",
+        "author": "장원준 전북대학교 첨단방산학과 교수",
+        "date": "2026.07.23",
+        "link": "column-view.html?post=view_17"
+    },
+    {
+        "id": 16,
+        "title": "캐나다 잠수함 수주전의 교훈은 [기고]",
+        "author": "장원준 전북대학교 첨단방산학과 교수",
+        "date": "2026.07.21",
+        "link": "column-view.html?post=view_16"
+    },
+    {
+        "id": 15,
+        "title": "[장원준 칼럼] 캐나다 잠수함 사업, K-방산의 미래 30년 가를 승부처",
+        "author": "장원준 전북대학교 첨단방산학과 교수",
+        "date": "2026.07.05",
+        "link": "column-view.html?post=view_15"
+    },
+    {
         "id": 13,
         "title": "AI 전쟁 시대, 기존 방위사업법만으로는 안 된다 [기고]",
         "author": "장원준 전북대학교 첨단방산학과 교수",
@@ -33,6 +75,13 @@
         "author": "장원준 전북대학교 첨단방산학과 교수",
         "date": "2026.06.04",
         "link": "column-view.html?post=view_09"
+    },
+    {
+        "id": 14,
+        "title": "일본의 ‘무기수출 3원칙’ 개정과 K-방산의 미래",
+        "author": "전광호 전북대학교 첨단방위산업학과 교수",
+        "date": "2026.04.24",
+        "link": "column-view.html?post=view_14"
     },
     {
         "id": 8,
