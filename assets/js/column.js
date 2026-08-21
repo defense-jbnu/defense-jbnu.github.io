@@ -39,18 +39,22 @@ function renderColumnTable() {
         return;
     }
 
-    listElement.innerHTML = pagedData.map(item => `
-        <tr class="notice-item">
-            <td class="notice-number">${item.id}</td>
-            <td class="notice-title-cell">
-                <a href="${escapeColumnHtml(item.link)}" ${getColumnLinkAttrs(item.link)}>
-                    <span>${escapeColumnHtml(item.title)}</span>
-                </a>
-            </td>
-            <td class="notice-author">${escapeColumnHtml(item.author || '-')}</td>
-            <td class="notice-date">${escapeColumnHtml(item.date)}</td>
-        </tr>
-    `).join('');
+    listElement.innerHTML = pagedData.map((item, index) => {
+        const displayNumber = allColumnData.length - (startIndex + index);
+
+        return `
+            <tr class="notice-item">
+                <td class="notice-number">${displayNumber}</td>
+                <td class="notice-title-cell">
+                    <a href="${escapeColumnHtml(item.link)}" ${getColumnLinkAttrs(item.link)}>
+                        <span>${escapeColumnHtml(item.title)}</span>
+                    </a>
+                </td>
+                <td class="notice-author">${escapeColumnHtml(item.author || '-')}</td>
+                <td class="notice-date">${escapeColumnHtml(item.date)}</td>
+            </tr>
+        `;
+    }).join('');
 
     renderColumnPagination();
 }
