@@ -1,5 +1,12 @@
 [
     {
+        "id": 35,
+        "title": "전북대, 탈레스코리아 'STEM for ALL' 국내 첫 장학생 배출",
+        "source": "전자신문",
+        "date": "2026.08.18",
+        "link": "news-view.html?post=view_35"
+    },
+    {
         "id": 37,
         "title": "전북대, 전국 AI 자율주행 경진대회 석권",
         "source": "KBS",
@@ -12,13 +19,6 @@
         "source": "뉴스1",
         "date": "2026.08.11",
         "link": "news-view.html?post=view_36"
-    },
-    {
-        "id": 35,
-        "title": "전북대, 국내 핵심 방산기업과 채용연계형 산학협력 본격화",
-        "source": "전자신문",
-        "date": "2026.06.27",
-        "link": "news-view.html?post=view_35"
     },
     {
         "id": 34,
