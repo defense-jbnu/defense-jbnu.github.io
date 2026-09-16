@@ -79,7 +79,7 @@ function getNoticeDescription(post) {
         : (post.summary || post.content || '');
 
     return String(content).replace(/\s+/g, ' ').trim().slice(0, 150)
-        || '전북대학교 K-방위산업연구소 공지사항 상세 내용입니다.';
+        || '전북대학교 국방산업연구소 공지사항 상세 내용입니다.';
 }
 
 function setNoticeMeta(selector, attribute, value) {
@@ -94,7 +94,7 @@ function updateNoticeSeo(post) {
     const params = new URLSearchParams(window.location.search);
     const postId = params.get('post') || '';
     const url = `${noticeSiteUrl}/pages/community/view.html?post=${encodeURIComponent(postId)}`;
-    const title = `${post.title} | 전북대학교 K-방위산업연구소`;
+    const title = `${post.title} | 전북대학교 국방산업연구소`;
     const description = getNoticeDescription(post);
 
     document.title = title;
@@ -117,7 +117,7 @@ function updateNoticeSeo(post) {
         inLanguage: 'ko-KR',
         publisher: {
             '@type': 'Organization',
-            name: '전북대학교 K-방위산업연구소',
+            name: '전북대학교 국방산업연구소',
             url: noticeSiteUrl,
         },
     };
