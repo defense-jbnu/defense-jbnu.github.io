@@ -79,7 +79,7 @@ function getColumnDescription(post) {
         : (post.summary || post.content || '');
 
     return String(content).replace(/\s+/g, ' ').trim().slice(0, 150)
-        || '전북대학교 K-방위산업연구소 기고·칼럼 상세 내용입니다.';
+        || '전북대학교 국방산업연구소 기고·칼럼 상세 내용입니다.';
 }
 
 function setColumnMeta(selector, attribute, value) {
@@ -94,7 +94,7 @@ function updateColumnSeo(post) {
     const params = new URLSearchParams(window.location.search);
     const postId = params.get('post') || '';
     const url = `${columnSiteUrl}/pages/community/column-view.html?post=${encodeURIComponent(postId)}`;
-    const title = `${post.title} | 전북대학교 K-방위산업연구소`;
+    const title = `${post.title} | 전북대학교 국방산업연구소`;
     const description = getColumnDescription(post);
 
     document.title = title;
@@ -118,7 +118,7 @@ function updateColumnSeo(post) {
         inLanguage: 'ko-KR',
         publisher: {
             '@type': 'Organization',
-            name: '전북대학교 K-방위산업연구소',
+            name: '전북대학교 국방산업연구소',
             url: columnSiteUrl,
         },
     };
