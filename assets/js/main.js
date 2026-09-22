@@ -3,7 +3,7 @@ const SITE_LANGUAGE_KEY = 'jbnu-defense-language';
 const SITE_COPY = {
     en: {
         ...(window.SITE_COPY_EN || {}),
-        '인사말 및 조직도 | 전북대학교 국방산업연구소': 'Greeting & Organization | JBNU Defense Industry Research Institute',
+        '인사말 및 조직도 | 전북대학교 국방산업연구소': 'Greetings & Organization | JBNU Defense Industry Research Institute',
         '인사말 / 조직도': 'Greeting / Organization',
         '전북대학교 국방산업연구소의 비전과 운영 체계를 소개합니다.': 'Introducing the vision and operating structure of the JBNU Defense Industry Research Institute.',
         '인사말 및 조직도 메뉴': 'Greeting & Organization Menu',
@@ -13,6 +13,14 @@ const SITE_COPY = {
         '전북대학교 국방산업연구소 조직도': 'JBNU Defense Industry Research Institute Organization Chart',
         '연구소장': 'Director',
         '강은호 교수': 'Prof. Kang Eun-ho',
+        '전광호': 'Kwang-ho Jeon',
+        '전광호 교수': 'Prof. Kwang-ho Jeon',
+        '장원준': 'Won-jun Jang',
+        '장원준 교수': 'Prof. Won-jun Jang',
+        '홍성민': 'Sung-min Hong',
+        '송문원': 'Moon-won Song',
+        '이대규': 'Dae-gyu Lee',
+        '유준수': 'Jun-soo Yoo',
         '부소장': 'Deputy Director',
         '국방전략부소장': 'Deputy Director for Defense Strategy',
         '안기찬 교수': 'Prof. Ahn Ki-chan',
@@ -34,25 +42,71 @@ const SITE_COPY = {
         '통합대학(방위산업) 송원준 교수': 'Prof. Song Won-jun, College of Convergence Studies (Defense Industry)',
         '국제전문사회학부 안기찬 교수': 'Prof. Ahn Ki-chan, Division of International Studies',
         '기계설계공학부 이덕진 교수, 물리학과 김명환 교수': 'Prof. Lee Deok-jin, Mechanical Design Engineering; Prof. Kim Myung-hwan, Physics',
+        '로스알라모스 연구소-전북대 한국공학연구소': 'Los Alamos–JBNU Korea Engineering Research Institute',
         '기계설계공학부 이덕진 교수, 고온플라즈마응용연구센터 홍성민 교수, 자원에너지공학과 조남호 교수, 양자시스템공학과 기태현 교수, 화학공학부 서형기 교수, 신소재공학부(정보소재공학) 김진수 교수': 'Prof. Lee Deok-jin, Mechanical Design Engineering; Prof. Hong Sung-min, High-Temperature Plasma Application Research Center; Prof. Cho Nam-ho, Resources and Energy Engineering; Prof. Ki Tae-hyun, Quantum System Engineering; Prof. Seo Hyung-ki, Chemical Engineering; Prof. Kim Jin-su, Advanced Materials Engineering (Information Materials)',
         '전북대학교 국방산업연구소': 'JBNU Defense Industry Research Institute',
-        '전북대학교 국방산업연구소 | 첨단방위산업학과': 'JBNU Defense Industry Research Institute | Department of Advanced Defense Industry',
+        '전북대학교 국방산업연구소 | 첨단방위산업학과': 'JBNU Defense Industry Research Institute | Department of Advanced Defense Technology and Industry',
+        '연구소 소개 | 전북대학교 국방산업연구소': 'Institute Overview | JBNU Defense Industry Research Institute',
+        '찾아오시는 길 | 전북대학교 국방산업연구소': 'Location | JBNU Defense Industry Research Institute',
+        '방위산업 맞춤형 채용연계 | 전북대학교 국방산업연구소': 'Defense Industry Employment Pathways | JBNU Defense Industry Research Institute',
+        '기고·칼럼 | 전북대학교 국방산업연구소': 'Columns | JBNU Defense Industry Research Institute',
+        '기고·칼럼 상세 | 전북대학교 국방산업연구소': 'Column Details | JBNU Defense Industry Research Institute',
+        '갤러리 | 전북대학교 국방산업연구소': 'Gallery | JBNU Defense Industry Research Institute',
+        '이슈브리프 | 전북대학교 국방산업연구소': 'Issue Briefs | JBNU Defense Industry Research Institute',
+        '언론보도 | 전북대학교 국방산업연구소': 'Media Coverage | JBNU Defense Industry Research Institute',
+        '언론보도 상세 | 전북대학교 국방산업연구소': 'Media Coverage Details | JBNU Defense Industry Research Institute',
+        '공지사항 | 전북대학교 국방산업연구소': 'Notices | JBNU Defense Industry Research Institute',
+        '공지사항 상세 | 전북대학교 국방산업연구소': 'Notice Details | JBNU Defense Industry Research Institute',
+        '홍보자료 | 전북대학교 국방산업연구소': 'Downloads | JBNU Defense Industry Research Institute',
+        '계약정원제 | 전북대학교 국방산업연구소': 'Industry-Contracted Program | JBNU Defense Industry Research Institute',
+        '방위산업융합전공 | 전북대학교 국방산업연구소': 'Defense Industry Convergence Major | JBNU Defense Industry Research Institute',
+        '첨단AI방위산업융합대학원 | 전북대학교 국방산업연구소': 'Graduate School of Advanced AI Defense Industry Convergence | JBNU Defense Industry Research Institute',
+        'JBNU-Purdue MDA (Master of Defense Acquisition) | 전북대학교 국방산업연구소': 'JBNU-Purdue MDA (Master of Defense Acquisition) | JBNU Defense Industry Research Institute',
+        '교수진 | 전북대학교 국방산업연구소': 'Faculty | JBNU Defense Industry Research Institute',
+        '직원 | 전북대학교 국방산업연구소': 'Staff | JBNU Defense Industry Research Institute',
+        '인턴십 | 전북대학교 국방산업연구소': 'Internship | JBNU Defense Industry Research Institute',
+        '국방산업관리사 | 전북대학교 국방산업연구소': 'Defense Industry Manager Program | JBNU Defense Industry Research Institute',
+        'AI 부트캠프 | 전북대학교 국방산업연구소': 'AI Bootcamp | JBNU Defense Industry Research Institute',
+        '연구성과 | 전북대학교 국방산업연구소': 'Research Outcomes | JBNU Defense Industry Research Institute',
+        '연구 분야 | 전북대학교 국방산업연구소': 'Research Areas | JBNU Defense Industry Research Institute',
+        '산학연 공동연구 | 전북대학교 국방산업연구소': 'Joint Research | JBNU Defense Industry Research Institute',
+        '협력기업 | 전북대학교 국방산업연구소': 'Partner Companies | JBNU Defense Industry Research Institute',
+        '사이트맵 | 전북대학교 국방산업연구소': 'Sitemap | JBNU Defense Industry Research Institute',
         '연구소 소개': 'About Us',
+        '통합소개': 'About',
         '인사말 / 조직도': 'Greetings / Organization',
         '찾아오시는 길': 'Location',
+        '국방산업연구소': 'Research Institute',
+        '교육과정': 'Curriculum',
+        '진학·진로 프로그램': 'Study & Career Programs',
+        '대학원·글로벌': 'Graduate & Global',
+        '채용연계': 'Employment Pathways',
+        '참여기업': 'Participating Companies',
+        '실무교육': 'Professional Training',
+        '직무교육': 'Professional Training',
+        '교육': 'Education',
+        '연구·산학협력': 'Research & Partnerships',
         '교육 프로그램': 'Education',
+        '교육·입학': 'Education',
         '학부': 'Undergraduate',
-        '첨단방위산업학과': 'Advanced Defense Industry',
+        '첨단방위산업학과': 'ADTI',
         '방위산업융합전공': 'Defense Industry Convergence Major',
         '대학원': 'Graduate School',
-        '첨단방산AI융합대학원': 'Graduate School of Advanced Defense AI Convergence',
+        '첨단AI방위산업융합대학원': 'Graduate School of Advanced AI Defense Industry Convergence',
         '계약정원제': 'Industry-Contracted Program',
         '프로그램': 'Programs',
         'AI 부트캠프': 'AI Bootcamp',
         'AI부트캠프': 'AI Bootcamp',
         '국방산업관리사': 'Defense Industry Manager Program',
         '인턴십': 'Internship',
+        'JBNU-Purdue MDA': 'JBNU-Purdue MDA',
+        '국방사업관리사': 'Defense Project Manager Program',
+        '진로·채용': 'Careers',
+        '진로·채용 안내': 'Career & Employment',
+        '채용약정형 석사과정': 'Employment-linked Master’s',
         '연구 분야': 'Research',
+        '연구·성과': 'Research & Outcomes',
+        '연구성과': 'Research Outcomes',
         '공과대학 및 타 학과': 'College of Engineering & Other Departments',
         '외부 협력': 'External Collaboration',
         '산학협력': 'Industry Partnership',
@@ -61,6 +115,7 @@ const SITE_COPY = {
         '협력기업': 'Partner Companies',
         '산학연 공동연구': 'Joint Research',
         '교직원': 'People',
+        '구성원': 'People',
         '교수': 'Faculty',
         '교수진': 'Faculty',
         '조교수': 'Assistant Professor',
@@ -75,11 +130,14 @@ const SITE_COPY = {
         '특ㆍ겸ㆍ객원 교수': 'Special, Adjunct & Visiting Faculty',
         '직원': 'Staff',
         '커뮤니티': 'Community',
+        '소식·자료': 'News & Resources',
         '공지사항': 'Notices',
         '공지 사항': 'Notices',
         '언론보도': 'Media Coverage',
         '기고·칼럼': 'Columns',
         '갤러리': 'Gallery',
+        '이슈브리프': 'Issue Briefs',
+        '홍보자료': 'Downloads',
         '연구소 갤러리': 'Institute Gallery',
         '사이트맵': 'Sitemap',
         '소식': 'News',
@@ -93,6 +151,47 @@ const SITE_COPY = {
         '이전글': 'Previous',
         '다음글': 'Next',
         '대한민국 방위산업의 미래를 만듭니다': 'Shaping the Future of Korea’s Defense Industry',
+        '국방산업연구소를 중심으로 학과 진학부터 대학원·글로벌 과정, 실무교육과 채용연계까지 안내합니다': 'Explore undergraduate admissions, graduate and global programs, professional training, and employment pathways centered on the institute.',
+        '연구소 비전·조직·주요 연구 분야': 'Vision, organization, and key research areas',
+        '학과 소개·교육과정·진로 안내': 'Department, curriculum, and career information',
+        '대학원·MDA·채용연계·부트캠프': 'Graduate school, MDA, employment pathways, and bootcamp',
+        'Master of Defense Acquisition 글로벌 온라인 석사과정입니다.': 'A global online Master of Defense Acquisition program.',
+        'MDA 안내': 'MDA Information',
+        '채용약정형 과정, 인턴십과 참여기업 정보를 연결합니다.': 'Explore employment-linked programs, internships, and participating companies.',
+        '채용연계 안내': 'Employment Pathways',
+        '지역 방산 생태계와 산학연 협력 기반을 조성합니다.': 'Building a regional defense ecosystem and industry-academia-research partnerships.',
+        '클러스터 안내': 'Cluster Information',
+        '방산 기획·조달·계약관리 전문역량을 강화하는 교육과정입니다.': 'Professional training in defense planning, procurement, and contract management.',
+        '교육과정 안내': 'Program Information',
+        '연구소': 'Institute',
+        '학과': 'Department',
+        '진학·진로': 'Study & Careers',
+        '연구·산학': 'Research & Industry',
+        '연구분야·성과·공동연구·협력기업': 'Research areas, outcomes, joint research, and partner companies',
+        '공지사항·언론보도·입학 관련 소식': 'Notices, media coverage, and admissions news',
+        '연구소를 중심으로, 진학부터 진로까지': 'From Admissions to Careers, Centered on the Institute',
+        '국방산업연구소를 중심으로 학부·대학원·주요 교육사업과 산학협력 정보를 연결하여 교육과 연구, 진학과 진로를 아우르는 방위산업 정보를 제공합니다.': 'Centered on the institute, we connect undergraduate and graduate programs, education initiatives, and industry partnerships across education, research, admissions, and careers.',
+        '교육·연구·산학협력의 연결 거점인 연구소의 비전과 역할을 소개합니다.': 'Learn about the institute’s vision and its role connecting education, research, and industry.',
+        '교육·연구·산학협력': 'Education, Research & Industry Collaboration',
+        '국방산업연구소를 중심으로 학부·대학원·주요 교육사업과 산학협력 정보를 연결하여 방위산업 전문인재 양성과 지역·기업 협력 활동을 소개합니다.': 'Centered on the institute, we connect undergraduate, graduate, education-program, and industry-partnership information to introduce talent development and regional-industry collaboration.',
+        '연구과제, 산학협력, MOU와 대외협력 성과를 총괄합니다.': 'We coordinate research projects, industry partnerships, MOUs, and external cooperation outcomes.',
+        '첨단 국방기술과 방위산업 정책·경영을 융합하는 학부 과정입니다.': 'An undergraduate program integrating advanced defense technology with defense-industry policy and management.',
+        '학과 안내': 'Department Information',
+        '대학원·사업단의 모집, 교육과정과 주요 사업 정보를 확인할 수 있습니다.': 'Explore admissions, curricula, and key initiatives from the graduate school and program center.',
+        '첨단 국방기술과 방위산업 정책·경영을 융합한 교육과정과 진로 정보를 제공합니다.': 'Explore a curriculum and career paths integrating advanced defense technology with defense policy and management.',
+        '방위산업 현장 중심의 석사급 R&D 인재 양성 과정': 'A field-focused graduate program for defense-industry R&D professionals',
+        '산업 수요와 실무형 R&D 역량을 연결하는 대학원 과정입니다.': 'A graduate program connecting industry needs with practical R&D capabilities.',
+        '대학원 안내': 'Graduate School Information',
+        'Master of Defense Acquisition 글로벌 온라인 석사과정 안내': 'Global Online Master of Defense Acquisition Program',
+        '채용약정형 과정·인턴십·참여기업과 진로 정보': 'Employment-linked programs, internships, participating companies, and careers',
+        '방산 분야 취업 역량을 높이는 집중 실무교육': 'Intensive practical training for defense-industry careers',
+        '방산 도메인과 AI를 결합한 현장 중심 교육사업을 운영합니다.': 'A field-oriented education program combining defense-domain expertise with AI.',
+        '부트캠프 안내': 'Bootcamp Information',
+        '진학을 준비하는 학생이라면': 'For Prospective Students',
+        '첨단방위산업학과의 특징과 교육과정, 졸업 후 진로를 한 번에 확인할 수 있습니다.': 'Explore the department, curriculum, and career opportunities in one place.',
+        '학과 안내 보기': 'View Department',
+        '교육과 취업 경로가 궁금한 학부모라면': 'For Parents Exploring Education and Careers',
+        '대학원, 인턴십, 채용약정형 과정과 참여기업 등 교육 이후의 진로 연결 정보를 확인할 수 있습니다.': 'Review graduate study, internships, employment-linked programs, and participating companies.',
         '전북대, 국내 핵심 방산기업과 채용연계형 산학협력 본격화': 'JBNU Expands Employment-Linked Industry-Academia Cooperation with Korea’s Leading Defense Companies',
         '출처: 전자신문': 'Source: Electronic Times',
         '우리는 「국가를 지키는 힘」 을 만들어 나갑니다': 'We Build the Power That Defends Our Nation',
@@ -118,13 +217,48 @@ const SITE_COPY = {
         '전북대학교 국방산업연구소의 언론 보도와 주요 소식을 확인하세요.': 'Explore media coverage and news from the JBNU Defense Industry Research Institute.',
         '전북대학교 국방산업연구소의 전문 기고와 칼럼을 소개합니다.': 'Read expert contributions and columns from the JBNU Defense Industry Research Institute.',
         '전북대학교 국방산업연구소의 다양한 활동을 사진으로 만나보세요.': 'See the institute’s activities in photos.',
+        '방산AI부트캠프': 'Defense AI Bootcamp',
+        '방산AI부트캠프사업단': 'Defense AI Bootcamp Program',
+        '진로·채용 안내 보기': 'View Career & Employment Information',
+        '연구소의 활동과 성과를 지속적으로 축적하고': 'We continuously document the institute’s activities and outcomes',
+        '쉽게 찾고 활용할 수 있는 자료': 'as organized resources',
+        '로 제공합니다': ' for easy access and use.',
+        '연구소 연구성과': 'Institute Research Outcomes',
+        '연구과제, MOU, 포럼·세미나 및 대외협력 활동': 'Research projects, MOUs, forums, seminars, and external cooperation',
+        'JBNU Defense Issue Brief 발간자료 아카이브': 'Archive of JBNU Defense Issue Brief publications',
+        '협력기관 및 참여기업': 'Partner Institutions and Companies',
+        '협력기관·기업': 'Partners',
+        '교육·연구·채용으로 연결되는 산학연 협력 네트워크': 'An industry-academia-research network connecting education, research, and employment',
+        '학과·연구소 소개서, 리플릿 및 내려받기 자료': 'Department and institute brochures, leaflets, and downloads',
+        '관련 홈페이지 바로가기': 'Related Websites',
+        '공식 대학원 홈페이지 →': 'Official Graduate School Website →',
+        '공식 사업단 홈페이지 →': 'Official Program Website →',
+        '주요 콘텐츠 바로가기': 'Quick Links',
+        '핵심 메뉴': 'Key Menu',
+        '카드 이동': 'Card Navigation',
+        '이전 카드': 'Previous Card',
+        '다음 카드': 'Next Card',
+        '연구소 및 교육 프로그램 카드': 'Institute and Education Program Cards',
+        '전북대학교 국방산업연구소와 첨단방위산업학과': 'JBNU Defense Industry Research Institute and ADTI',
+        '전북대학교와 국내 방산기업의 채용연계형 산학협력 협약식': 'JBNU employment-linked industry partnership agreement with leading Korean defense companies',
+        '대한민국 방위산업 유튜브 영상': 'Korea Defense Industry Video',
         '(54896) 전북특별자치도 전주시 덕진구 백제대로 567 | TEL 063-270-4582': '(54896) 567 Baekje-daero, Deokjin-gu, Jeonju-si, Jeonbuk State, Republic of Korea | TEL +82-63-270-4582',
         '교육과정 / 방위산업융합전공': 'Curriculum / Defense Industry Convergence Major',
         '교육과정 / 학부 과정': 'Undergraduate Program',
-        '전북대학교 첨단방위산업학과': 'JBNU Department of Advanced Defense Industry',
-        '첨단방위산업학과 소개': 'About the Department',
-        '전북대학교 첨단방위산업학과 | 국방산업연구소': 'JBNU Department of Advanced Defense Industry | Defense Industry Research Institute',
+        '전북대학교 첨단방위산업학과': 'Department of Advanced Defense Technology and Industry, JBNU',
+        '첨단방위산업학과 소개': 'About the Department of Advanced Defense Technology and Industry',
+        '전북대학교 첨단방위산업학과 | 국방산업연구소': 'Department of Advanced Defense Technology and Industry, JBNU | Defense Industry Research Institute',
+        '첨단방위산업학과 | 전북대학교 국방산업연구소': 'Department of Advanced Defense Technology and Industry | JBNU Defense Industry Research Institute',
         '학과 소개': 'Department',
+        '학부 과정 메뉴': 'Undergraduate Program Menu',
+        '첨단 국방기술과 방위산업 정책·경영·시스템을 융합해 방위산업 전주기를 이해하는 실무형 인재를 양성합니다.': 'We prepare practice-oriented professionals who understand the full defense-industry lifecycle by integrating advanced defense technology with policy, management, and systems.',
+        '첨단방위산업학과는 급변하는 안보 환경과 글로벌 방위산업 시장의 확대에 대응하기 위해 첨단 국방기술과 방위산업 정책·경영·시스템을 융합적으로 교육하는 특성화 학과입니다.': 'The Department of Advanced Defense Technology and Industry is a specialized program integrating advanced defense technology with defense-industry policy, management, and systems in response to a rapidly changing security environment and expanding global markets.',
+        '첨단소재, 유·무인복합체계, 사이버보안, 방산경제·경영 등 방위산업 전주기를 다루며, 무기체계의 기획·개발·획득·시험·평가 전 과정에 대한 이해와 실무 역량을 강화합니다.': 'The curriculum covers the full defense-industry lifecycle, including advanced materials, manned-unmanned teaming, cybersecurity, and defense economics and management, while building practical expertise across weapon-system planning, development, acquisition, testing, and evaluation.',
+        '영문명': 'English Name',
+        '교육 분야': 'Areas of Study',
+        '첨단소재, 유·무인복합체계, 사이버보안, 방산경제·경영': 'Advanced materials, manned-unmanned teaming, cybersecurity, and defense economics and management',
+        '위치·문의': 'Location & Contact',
+        '전북대학교 창조2관 4층 · 063-270-4731': '4th floor, Changjo Hall 2, JBNU · +82-63-270-4731',
         '산학협력 실무교육': 'Industry Practice',
         '산학협력 기반 실무 교육': 'Industry Practice',
         '산학협력 기반 실무교육': 'Industry Practice',
@@ -132,16 +266,16 @@ const SITE_COPY = {
         '방위산업융합전공 소개': 'About the Defense Industry Convergence Major',
         '교육 목표': 'Goals',
         '융합형 교육과정': 'Curriculum',
-        '첨단방위산업학과는 방위산업 핵심기술, 정책, 실무교육을 결합해 국방과 산업 현장을 연결하는 융합형 인재를 양성합니다.': 'The Department of Advanced Defense Industry develops interdisciplinary talent by connecting defense technology, policy, and practical training.',
+        '첨단방위산업학과는 방위산업 핵심기술, 정책, 실무교육을 결합해 국방과 산업 현장을 연결하는 융합형 인재를 양성합니다.': 'The Department of Advanced Defense Technology and Industry develops interdisciplinary talent by connecting defense technology, policy, and practical training.',
         '첨단방위산업학과는 융합형 교육과정, 전문가 네트워크, 산학협력 기반 실무교육, 맞춤형 취업 지원을 통해 방위산업 현장에서 요구하는 전문 인재를 양성합니다.': 'The department prepares defense-industry professionals through an integrated curriculum, expert networks, industry practice, and tailored career support.',
         '소속': 'Affiliation',
-        '대학본부 첨단방위산업학과': 'Department of Advanced Defense Industry',
+        '대학본부 첨단방위산업학과': 'Department of Advanced Defense Technology and Industry',
         '특징': 'Highlights',
         '융합형 교육과정, 전문가 네트워크 구축, 산학협력 기반 실무교육, 맞춤형 지원': 'Integrated curriculum, expert network, industry practice, and tailored support',
         '모집 인원': 'Admissions',
         '2026년 1학기 20명 선발': '20 students selected for Spring 2026',
         '전용공간: 창조2관 4층': 'Dedicated space: 4th floor, Changjo Hall 2',
-        '첨단방위산업학과 교수진': 'Department Faculty',
+        '첨단방위산업학과 교수진': 'ADTI Faculty',
         '학과 교수진과 전공별 연구 분야를 확인할 수 있습니다.': 'Meet the department faculty and explore their research fields.',
         '교수진 보기': 'View Faculty',
         '국방 첨단기술과 방위산업 정책을 함께 이해하고, 연구개발 전 과정을 학습하는 실무형 교육을 지향합니다.': 'We provide practical training in advanced defense technology, defense policy, and the full R&D process.',
@@ -151,7 +285,6 @@ const SITE_COPY = {
         '방산기업 적용 전략, 무기 획득 및 조달 체계, 첨단 소재와 사이버보안 등 핵심기술을 다룹니다.': 'Study defense-industry applications, acquisition and procurement, advanced materials, and cybersecurity.',
         'R&D 프로세스 경험': 'R&D Practice',
         '방산 연구개발, 시험평가, 시스템 설계 등 현장 프로젝트 기반의 문제 해결 역량을 강화합니다.': 'Build problem-solving skills through defense R&D, testing, evaluation, and systems-design projects.',
-        '융합형 교육과정 제공(안)': 'Integrated Curriculum',
         '1학년 공통 교육부터 4학년 실무 심화까지, 방산정책과 첨단기술 트랙을 단계적으로 연결합니다.': 'A step-by-step track from common first-year courses to advanced senior-year practice.',
         '한화에어로스페이스, LIG넥스원, 현대로템, KAI 등 주요 방산기업 및 연구기관과 연계해 현장 중심 프로젝트, 공동연구, 취업 연계형 교육을 운영합니다.': 'We run field projects, joint research, and employment-linked training with leading defense companies and research institutes.',
         '방위산업 현장 전문가 특강 및 멘토링': 'Expert talks & mentoring',
@@ -160,6 +293,16 @@ const SITE_COPY = {
         '채용 정보, 직무 이해, 포트폴리오 중심의 진로 지원': 'Career support through job information, role guidance, and portfolios',
         '산학협력 기반 실무교육 참여 기업 로고': 'Participating industry partners',
         '방산기업 및 연구기관 협력 네트워크': 'Defense industry & research network',
+        '졸업 후 진로': 'Career Paths',
+        '기술개발부터 정책·전략, 연구개발과 글로벌 방산협력까지 다양한 분야로 진출할 수 있습니다.': 'Graduates can pursue careers spanning technology development, policy and strategy, R&D, and global defense cooperation.',
+        '방산기업 및 산업체': 'Defense Companies & Industry',
+        '주요 방산기업의 무기체계·항공·군용차량·유무인복합체계 설계 및 개발 분야': 'Weapon systems, aerospace, military vehicles, and manned-unmanned systems design and development at leading defense companies',
+        '국방 연구기관 및 공공기관': 'Defense Research & Public Agencies',
+        '국방 연구개발, 방위사업 관리, 국방기술 기획 및 정책 연구 분야': 'Defense R&D, acquisition program management, technology planning, and policy research',
+        '연구·기술 분야': 'Research & Engineering',
+        '군용 통신·전자·소프트웨어, 사이버보안, 시스템 통합 및 시험·평가 분야': 'Military communications, electronics and software, cybersecurity, systems integration, testing, and evaluation',
+        '정책·국제협력 및 진학': 'Policy, Global Cooperation & Graduate Study',
+        '방산 정책·전략 분석, 글로벌 방산 수출·국제협력, 관련 대학원 및 전문 연구 분야': 'Defense policy and strategy, global exports and cooperation, graduate study, and specialized research',
         '방산 클러스터 | 전북대학교 국방산업연구소': 'Defense Cluster | JBNU Defense Industry Research Institute',
         '전북 지역 방산 클러스터 조성과 산학연 협력 거점 구축 현황을 소개합니다.': 'Introducing Jeonbuk’s defense cluster initiative and industry-academia-research cooperation base.',
         '첨단소재·시험평가 중심 방산 클러스터': 'Advanced Materials & Test Evaluation Defense Cluster',
@@ -309,9 +452,16 @@ function translateStaticContent(root = document.body) {
     });
 
     if (document.title) {
-        Object.entries(SITE_COPY.en).forEach(([ko, en]) => {
-            document.title = document.title.replaceAll(ko, en);
-        });
+        const originalTitle = document.title.replace(/\s+/g, ' ').trim();
+        const exactTitle = SITE_COPY.en[originalTitle];
+
+        if (exactTitle) {
+            document.title = exactTitle;
+        } else {
+            document.title = Object.entries(SITE_COPY.en)
+                .sort(([left], [right]) => right.length - left.length)
+                .reduce((title, [ko, en]) => title.replaceAll(ko, en), document.title);
+        }
     }
 }
 
@@ -334,7 +484,7 @@ function observeTranslatedContent() {
 
 const SITE_NAV_ITEMS = [
     {
-        label: '연구소 소개',
+        label: '국방산업연구소',
         href: 'pages/about/intro.html',
         children: [
             { label: '연구소 소개', href: 'pages/about/intro.html' },
@@ -343,50 +493,66 @@ const SITE_NAV_ITEMS = [
         ],
     },
     {
-        label: '교육 프로그램',
+        label: '첨단방위산업학과',
         href: 'pages/major/advanced.html',
+        children: [
+            { label: '학과 소개', href: 'pages/major/advanced.html#department' },
+            { label: '교육과정', href: 'pages/major/advanced.html#curriculum' },
+            { label: '진로·채용 안내', href: 'pages/career/overview.html' },
+            { label: '방위산업융합전공', href: 'pages/major/convergence.html' },
+        ],
+    },
+    {
+        label: '교육',
+        href: 'pages/major/graduate.html',
         menuType: 'mega',
         children: [
             {
-                label: '학부',
+                label: '대학원·글로벌',
                 children: [
-                    { label: '첨단방위산업학과', href: 'pages/major/advanced.html' },
-                    { label: '방위산업융합전공', href: 'pages/major/convergence.html' },
+                    { label: '첨단AI방위산업융합대학원', href: 'pages/major/graduate.html' },
+                    { label: 'JBNU-Purdue MDA', href: 'pages/major/mda.html' },
                 ],
             },
             {
-                label: '대학원',
+                label: '채용연계',
                 children: [
-                    { label: '첨단방산AI융합대학원', href: 'pages/major/graduate.html' },
+                    { label: '진로·채용 안내', href: 'pages/career/overview.html' },
+                    { label: '인턴십', href: 'pages/program/apply.html' },
+                    { label: '참여기업', href: 'pages/research/partners.html' },
                     { label: '계약정원제', href: 'pages/major/contract_grad.html' },
                 ],
             },
             {
-                label: '프로그램',
+                label: '실무교육',
                 children: [
-                    { label: 'AI 부트캠프', href: 'pages/program/intro.html' },
-                    { label: '국방산업관리사', href: 'pages/program/defense-manager.html' },
-                    { label: '인턴십', href: 'pages/program/apply.html' },
+                    { label: '방산AI부트캠프', href: 'pages/program/intro.html' },
+                    { label: '국방사업관리사', href: 'pages/program/defense-manager.html' },
                 ],
             },
         ],
     },
     {
-        label: '연구 분야',
+        label: '연구·산학협력',
         href: 'pages/research/fields.html',
         children: [
-            { label: '첨단방위산업학과', href: 'pages/research/fields.html#research-department' },
-            { label: '공과대학 및 타 학과', href: 'pages/research/fields.html#research-college' },
-            { label: '외부 협력', href: 'pages/research/fields.html#research-external' },
+            { label: '연구 분야', href: 'pages/research/fields.html' },
+            { label: '연구성과', href: 'pages/research/achievements.html' },
+            { label: '산학연 공동연구', href: 'pages/research/joint.html' },
+            { label: '방산 클러스터', href: 'pages/research/cluster.html' },
+            { label: '협력기업', href: 'pages/research/partners.html' },
         ],
     },
     {
-        label: '산학협력',
-        href: 'pages/research/cluster.html',
+        label: '소식·자료',
+        href: 'pages/community/notice.html',
         children: [
-            { label: '방산 클러스터', href: 'pages/research/cluster.html' },
-            { label: '협력기업', href: 'pages/research/partners.html' },
-            { label: '산학연 공동연구', href: 'pages/research/joint.html' },
+            { label: '공지사항', href: 'pages/community/notice.html' },
+            { label: '언론보도', href: 'pages/community/news.html' },
+            { label: '기고·칼럼', href: 'pages/community/column.html' },
+            { label: '이슈브리프', href: 'pages/community/issue-brief.html' },
+            { label: '갤러리', href: 'pages/community/gallery.html' },
+            { label: '홍보자료', href: 'pages/community/resources.html' },
         ],
     },
     {
@@ -395,16 +561,6 @@ const SITE_NAV_ITEMS = [
         children: [
             { label: '교수', href: 'pages/people/faculty.html' },
             { label: '직원', href: 'pages/people/staff.html' },
-        ],
-    },
-    {
-        label: '커뮤니티',
-        href: 'pages/community/notice.html',
-        children: [
-            { label: '공지사항', href: 'pages/community/notice.html' },
-            { label: '언론보도', href: 'pages/community/news.html' },
-            { label: '기고·칼럼', href: 'pages/community/column.html' },
-            { label: '갤러리', href: 'pages/community/gallery.html' },
         ],
     },
 ];
@@ -437,7 +593,6 @@ function createUtilityLink(item, root) {
 
     if (item.disabled) {
         element.setAttribute('aria-disabled', 'true');
-        element.title = '추후 제공 예정';
         return element;
     }
 
@@ -795,10 +950,90 @@ function renderSitemap() {
     sitemap.replaceChildren(fragment);
 }
 
+function setupCardCarousels() {
+    document.querySelectorAll('[data-card-carousel]').forEach(carousel => {
+        const track = carousel.querySelector('[data-carousel-track]');
+        const previousButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+        const currentLabel = carousel.querySelector('[data-carousel-current]');
+
+        if (!track || !previousButton || !nextButton) {
+            return;
+        }
+
+        const cards = Array.from(track.querySelectorAll('.portal-carousel-card'));
+
+        if (!cards.length) {
+            return;
+        }
+
+        function getCurrentIndex() {
+            const trackLeft = track.getBoundingClientRect().left;
+            let closestIndex = 0;
+            let closestDistance = Number.POSITIVE_INFINITY;
+
+            cards.forEach((card, index) => {
+                const distance = Math.abs(card.getBoundingClientRect().left - trackLeft);
+
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
+                }
+            });
+
+            return closestIndex;
+        }
+
+        function updateCarouselState() {
+            const maximumScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+            const currentIndex = getCurrentIndex();
+
+            previousButton.disabled = track.scrollLeft <= 4;
+            nextButton.disabled = track.scrollLeft >= maximumScroll - 4;
+
+            if (currentLabel) {
+                currentLabel.textContent = String(currentIndex + 1).padStart(2, '0');
+            }
+        }
+
+        function moveCarousel(direction) {
+            const firstCard = cards[0];
+            const trackStyles = window.getComputedStyle(track);
+            const gap = Number.parseFloat(trackStyles.columnGap || trackStyles.gap) || 0;
+            const distance = firstCard.getBoundingClientRect().width + gap;
+
+            track.scrollBy({ left: direction * distance, behavior: 'smooth' });
+        }
+
+        previousButton.addEventListener('click', () => moveCarousel(-1));
+        nextButton.addEventListener('click', () => moveCarousel(1));
+
+        track.addEventListener('keydown', event => {
+            if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
+                return;
+            }
+
+            event.preventDefault();
+            moveCarousel(event.key === 'ArrowLeft' ? -1 : 1);
+        });
+
+        let updateFrame = 0;
+
+        track.addEventListener('scroll', () => {
+            window.cancelAnimationFrame(updateFrame);
+            updateFrame = window.requestAnimationFrame(updateCarouselState);
+        }, { passive: true });
+
+        window.addEventListener('resize', updateCarouselState);
+        updateCarouselState();
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     renderSiteUtilityLinks();
     renderSiteNavigation();
     setupTouchNavigation();
+    setupCardCarousels();
     renderSitemap();
     translateStaticContent();
     observeTranslatedContent();

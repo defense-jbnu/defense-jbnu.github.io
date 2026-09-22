@@ -17,7 +17,7 @@ META = {
     "pages/about/location.html": ("찾아오시는 길 | 전북대학교 국방산업연구소", "전북대학교 국방산업연구소 위치, 교통편, 캠퍼스 접근 정보를 안내합니다.", ["연구소 소개", "찾아오시는 길"]),
     "pages/major/advanced.html": ("전북대학교 첨단방위산업학과 | 국방산업연구소", "전북대학교 첨단방위산업학과의 학과 소개, 교육과정, 모집·입학 정보, 진로와 산학협력 프로그램을 국방산업연구소 홈페이지에서 안내합니다.", ["교육 프로그램", "첨단방위산업학과"]),
     "pages/major/convergence.html": ("방위산업융합전공 | 전북대학교 국방산업연구소", "방위산업융합전공의 교육과정, 참여 학문 분야, 융합형 인재 양성 방향을 안내합니다.", ["교육 프로그램", "방위산업융합전공"]),
-    "pages/major/graduate.html": ("첨단방산AI융합대학원 | 전북대학교 국방산업연구소", "첨단방산AI융합대학원의 교육과정, 산학협력, 글로벌 연계 및 연구 분야를 소개합니다.", ["교육 프로그램", "첨단방산AI융합대학원"]),
+    "pages/major/graduate.html": ("첨단AI방위산업융합대학원 | 전북대학교 국방산업연구소", "첨단AI방위산업융합대학원의 교육과정, 산학협력, 글로벌 연계 및 연구 분야를 소개합니다.", ["교육 프로그램", "첨단AI방위산업융합대학원"]),
     "pages/major/contract_grad.html": ("계약정원제 | 전북대학교 국방산업연구소", "전북대학교 국방산업연구소의 계약정원제 운영 방향과 방산 분야 전문 인재 양성 체계를 안내합니다.", ["교육 프로그램", "계약정원제"]),
     "pages/program/intro.html": ("AI 부트캠프 | 전북대학교 국방산업연구소", "첨단 방위산업과 AI 기술 융합 역량을 키우는 전북대학교 AI 부트캠프 프로그램을 소개합니다.", ["교육 프로그램", "AI 부트캠프"]),
     "pages/program/defense-manager.html": ("국방산업관리사 | 전북대학교 국방산업연구소", "2026 전북대학교 국방사업관리사 자격증 취득 교육 재직자 전문교육과정의 교육 내용, 일정, 대상, 접수 및 문의 정보를 안내합니다.", ["교육 프로그램", "국방산업관리사"]),
@@ -79,6 +79,8 @@ def build_head_block(relative_path: str, title: str, description: str, crumbs: l
     schemas = page_schema(relative_path, title, description) + [breadcrumb_schema(relative_path, crumbs)]
     return "\n".join(
         [
+            '    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">',
+            '    <meta name="referrer" content="strict-origin-when-cross-origin">',
             f"    <title>{title}</title>",
             f'    <meta name="description" content="{esc_attr(description)}">',
             '    <meta name="robots" content="index, follow">',
