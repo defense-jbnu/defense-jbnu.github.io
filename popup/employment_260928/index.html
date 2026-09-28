@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전북대-방산기업 채용연계 산학협력</title>
+    <style>
+        @font-face {
+            font-family: "Gmarket Sans";
+            src: url("fonts/GmarketSansBold.woff") format("woff");
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "SUIT Variable";
+            src: url("fonts/SUIT-Variable.woff2") format("woff2-variations");
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #071322;
+            color: #fff;
+            font-family: "SUIT Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+        .article-popup {
+            position: relative;
+            display: flex;
+            min-height: 100vh;
+            border: 4px solid #d5aa59;
+            flex-direction: column;
+            overflow: hidden;
+            isolation: isolate;
+            background: #071322;
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.34),
+                inset 0 0 48px rgba(213, 170, 89, 0.12);
+        }
+
+        .article-popup::before {
+            position: absolute;
+            z-index: -2;
+            inset: 0;
+            background: url('employment-defense-bg.png') center 48% / cover no-repeat;
+            content: "";
+        }
+
+        .article-popup::after {
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(1, 10, 24, 0.96) 0%, rgba(2, 14, 32, 0.84) 48%, rgba(2, 14, 32, 0.24) 79%, rgba(2, 14, 32, 0.04) 100%),
+                linear-gradient(0deg, rgba(2, 11, 25, 0.88) 0%, rgba(2, 11, 25, 0.04) 48%, rgba(2, 11, 25, 0.12) 100%);
+            content: "";
+        }
+
+        .article-content {
+            display: flex;
+            flex: 1 1 auto;
+            flex-direction: column;
+            justify-content: center;
+            padding: 38px 44px 27px;
+        }
+
+        .article-kicker {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 12px;
+            color: #e5bd69;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.23em;
+        }
+
+        .article-kicker::before {
+            width: 30px;
+            height: 2px;
+            background: #e5bd69;
+            content: "";
+        }
+
+        .article-title {
+            margin: 0;
+            max-width: 560px;
+            font-family: "Gmarket Sans", "SUIT Variable", sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.045em;
+            word-break: keep-all;
+            text-shadow: 0 3px 20px rgba(0, 0, 0, 0.72);
+        }
+
+        .article-title-context {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            color: #eef4fb;
+            font-size: clamp(20px, 3.2vw, 24px);
+            line-height: 1.35;
+        }
+
+        .article-title-context b {
+            margin-left: 3px;
+            color: #e5b657;
+            font-size: 1.4em;
+        }
+
+        .article-title-main {
+            display: block;
+            margin-top: 5px;
+            font-size: clamp(32px, 5vw, 41px);
+            line-height: 1.25;
+        }
+
+        .article-title-main em {
+            color: #e5b657;
+            font-style: normal;
+        }
+
+        .article-summary {
+            max-width: 500px;
+            margin: 14px 0 0;
+            color: #d8e3f0;
+            font-size: 14px;
+            font-weight: 550;
+            line-height: 1.6;
+            word-break: keep-all;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .article-pathway {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            align-items: center;
+            width: fit-content;
+            max-width: 100%;
+            margin-top: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(229, 182, 87, 0.58);
+            border-radius: 3px;
+            background: rgba(3, 16, 34, 0.76);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .article-pathway span {
+            position: relative;
+            padding: 9px 22px 9px 12px;
+            color: #edf3fb;
+            font-size: 12px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .article-pathway span:first-child {
+            padding-left: 14px;
+        }
+
+        .article-pathway span:not(:last-child)::after {
+            position: absolute;
+            top: 50%;
+            right: 7px;
+            color: #e5b657;
+            content: "›";
+            font-size: 16px;
+            transform: translateY(-52%);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 9px;
+            margin: 15px 0 0;
+            color: #c5d2e2;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .article-meta span + span::before {
+            margin-right: 9px;
+            content: "·";
+        }
+
+        .article-link {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            justify-content: center;
+            min-height: 43px;
+            margin-top: 16px;
+            padding: 0 18px;
+            border: 1px solid #d5aa59;
+            border-radius: 3px;
+            background: linear-gradient(135deg, #efc66c 0%, #c99436 100%);
+            color: #101827;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .article-link:hover,
+        .article-link:focus-visible {
+            background: #ebc77f;
+            border-color: #ebc77f;
+            box-shadow: 0 13px 30px rgba(0, 0, 0, 0.36);
+            transform: translateY(-2px);
+        }
+
+        .popup-preferences {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 46px;
+            margin-top: auto;
+            border-top: 1px solid rgba(213, 170, 89, 0.75);
+            background: rgba(4, 15, 31, 0.96);
+        }
+
+        .popup-preference-button {
+            border: 0;
+            background: transparent;
+            color: #e2eaf4;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .popup-preference-button + .popup-preference-button {
+            border-left: 1px solid rgba(213, 170, 89, 0.3);
+        }
+
+        .popup-preference-button:hover,
+        .popup-preference-button:focus-visible {
+            background: rgba(213, 170, 89, 0.16);
+            color: #fff;
+        }
+
+        @media (max-width: 560px) {
+            .article-content {
+                padding: 34px 23px 23px;
+            }
+
+            .article-summary {
+                max-width: 460px;
+                font-size: 14px;
+            }
+
+            .article-pathway span {
+                padding-right: 17px;
+                padding-left: 9px;
+                font-size: 11px;
+            }
+
+            .article-pathway span:first-child {
+                padding-left: 11px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="article-popup" aria-label="전북대학교 방산기업 채용연계 언론보도 팝업">
+        <article class="article-content">
+            <p class="article-kicker">JBNU DEFENSE INDUSTRY · MEDIA</p>
+            <h1 class="article-title">
+                <span class="article-title-context">전북대 × 방산기업 <b>15</b>곳</span>
+                <span class="article-title-main"><em>교육부터 채용까지</em><br>산학협력 본격 가동</span>
+            </h1>
+            <p class="article-summary">
+                첨단방위산업학과와 국내 방산기업이 기업 맞춤형 교육부터 현장실습과 채용까지 연결하는 전문인력 양성 모델을 추진합니다.
+            </p>
+            <div class="article-pathway" aria-label="교육부터 채용까지의 연계 과정">
+                <span>맞춤형 교육</span>
+                <span>산학장학</span>
+                <span>프로젝트·인턴십</span>
+                <span>채용연계</span>
+            </div>
+            <p class="article-meta">
+                <span>전자신문</span>
+                <span>2026.09.18</span>
+            </p>
+            <a class="article-link" href="../../pages/community/news-view.html?post=view_42" target="_blank" rel="noopener noreferrer">
+                기사 자세히 보기&nbsp; →
+            </a>
+        </article>
+
+        <div class="popup-preferences">
+            <button class="popup-preference-button" type="button" data-popup-hide-today>오늘 하루 보지 않기</button>
+            <button class="popup-preference-button" type="button" data-popup-hide-forever>다시 보지 않기</button>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const storageKey = 'jbnuDefenseEmploymentPopup260928HiddenUntil';
+            const foreverValue = 'forever';
+            const hideToday = document.querySelector('[data-popup-hide-today]');
+            const hideForever = document.querySelector('[data-popup-hide-forever]');
+
+            function getTomorrowStart() {
+                const tomorrow = new Date();
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                tomorrow.setHours(0, 0, 0, 0);
+                return tomorrow.getTime();
+            }
+
+            function closePopup() {
+                if (window.opener) {
+                    window.close();
+                    return;
+                }
+
+                const targetOrigin = window.location.origin === 'null' ? '*' : window.location.origin;
+                window.parent.postMessage({ type: 'jbnu-main-popup-close' }, targetOrigin);
+            }
+
+            hideToday.addEventListener('click', () => {
+                localStorage.setItem(storageKey, String(getTomorrowStart()));
+                closePopup();
+            });
+
+            hideForever.addEventListener('click', () => {
+                localStorage.setItem(storageKey, foreverValue);
+                closePopup();
+            });
+        })();
+    </script>
+</body>
+</html>
