@@ -1,12 +1,12 @@
 (function () {
-    const popupUrl = 'popup/k-defense_260910/index.html';
-    const popupName = 'jbnuKDefenseMainPopup';
-    const storageKey = 'jbnuKDefenseMainPopup260910HiddenUntil';
+    const popupUrl = 'popup/employment_260928/index.html';
+    const popupName = 'jbnuDefenseEmploymentPopup';
+    const storageKey = 'jbnuDefenseEmploymentPopup260928HiddenUntil';
     const foreverValue = 'forever';
-    const displayStartAt = new Date('2026-09-10T00:00:00+09:00').getTime();
-    const displayEndAt = new Date('2026-09-23T23:59:59+09:00').getTime();
-    const width = 820;
-    const height = 780;
+    const displayStartAt = new Date('2026-09-28T00:00:00+09:00').getTime();
+    const displayEndAt = new Date('2026-10-11T23:59:59+09:00').getTime();
+    const width = 680;
+    const height = 620;
 
     function shouldHidePopup() {
         const now = Date.now();
