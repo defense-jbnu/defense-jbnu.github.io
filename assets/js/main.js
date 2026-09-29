@@ -79,7 +79,7 @@ const SITE_COPY = {
         '국방산업연구소': 'Research Institute',
         '교육과정': 'Curriculum',
         '진학·진로 프로그램': 'Study & Career Programs',
-        '대학원·글로벌': 'Graduate & Global',
+        '학부·대학원': 'Undergraduate & Graduate',
         '채용연계': 'Employment Pathways',
         '참여기업': 'Participating Companies',
         '실무교육': 'Professional Training',
@@ -151,7 +151,7 @@ const SITE_COPY = {
         '이전글': 'Previous',
         '다음글': 'Next',
         '대한민국 방위산업의 미래를 만듭니다': 'Shaping the Future of Korea’s Defense Industry',
-        '국방산업연구소를 중심으로 학과 진학부터 대학원·글로벌 과정, 실무교육과 채용연계까지 안내합니다': 'Explore undergraduate admissions, graduate and global programs, professional training, and employment pathways centered on the institute.',
+        '국방산업연구소를 중심으로 학과 진학부터 학부·대학원 과정, 실무교육과 채용연계까지 안내합니다': 'Explore undergraduate and graduate programs, professional training, and employment pathways centered on the institute.',
         '연구소 비전·조직·주요 연구 분야': 'Vision, organization, and key research areas',
         '학과 소개·교육과정·진로 안내': 'Department, curriculum, and career information',
         '대학원·MDA·채용연계·부트캠프': 'Graduate school, MDA, employment pathways, and bootcamp',
@@ -499,7 +499,6 @@ const SITE_NAV_ITEMS = [
             { label: '학과 소개', href: 'pages/major/advanced.html#department' },
             { label: '교육과정', href: 'pages/major/advanced.html#curriculum' },
             { label: '진로·채용 안내', href: 'pages/career/overview.html' },
-            { label: '방위산업융합전공', href: 'pages/major/convergence.html' },
         ],
     },
     {
@@ -508,8 +507,9 @@ const SITE_NAV_ITEMS = [
         menuType: 'mega',
         children: [
             {
-                label: '대학원·글로벌',
+                label: '학부·대학원',
                 children: [
+                    { label: '방위산업융합전공', href: 'pages/major/convergence.html' },
                     { label: '첨단AI방위산업융합대학원', href: 'pages/major/graduate.html' },
                     { label: 'JBNU-Purdue MDA', href: 'pages/major/mda.html' },
                 ],
