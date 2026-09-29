@@ -107,6 +107,7 @@ const SITE_COPY = {
         '연구 분야': 'Research',
         '연구·성과': 'Research & Outcomes',
         '연구성과': 'Research Outcomes',
+        '연구 성과': 'Research Outcomes',
         '공과대학 및 타 학과': 'College of Engineering & Other Departments',
         '외부 협력': 'External Collaboration',
         '산학협력': 'Industry Partnership',
@@ -537,7 +538,7 @@ const SITE_NAV_ITEMS = [
         href: 'pages/research/fields.html',
         children: [
             { label: '연구 분야', href: 'pages/research/fields.html' },
-            { label: '연구성과', href: 'pages/research/achievements.html' },
+            { label: '연구 성과', href: 'pages/research/achievements.html' },
             { label: '산학연 공동연구', href: 'pages/research/joint.html' },
             { label: '방산 클러스터', href: 'pages/research/cluster.html' },
             { label: '협력기업', href: 'pages/research/partners.html' },

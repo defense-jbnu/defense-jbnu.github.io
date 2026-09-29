@@ -554,6 +554,7 @@ window.SITE_COPY_EN = {
     "프로젝트 관리": "Project Management",
     "프로필 보기": "View Profile",
     "필수": "South Korea University Regulation: Minimum 4-semester registration period for Master's students",
+    "연구 성과": "Research Outcomes",
     "필요기술과 교수진의 연구 성과 등을 고려한 R&D 추진전략수립": "Definition of necessary technologies for market success",
     "필자": "Author",
     "학과 소개": "Affiliation",
