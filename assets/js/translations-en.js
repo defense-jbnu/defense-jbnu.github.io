@@ -560,6 +560,7 @@ window.SITE_COPY_EN = {
     "학과의 전공필수 교과목 최소화하여 운영": "To minimize theoretical education for practical/matched talent cultivation",
     "학년": "Year",
     "학부 과정 메뉴": "Undergraduate Course Menu",
+    "학부·대학원": "Undergraduate & Graduate",
     "학사, 교무, 장학 등": "Bachelor's degree, Office Affairs, Scholarship",
     "학생 지원 혜택": "Student Benefits",
     "학생이 기업과 대학의 연구 가교 역할 수행": "More than 3 days a week corporate research, 2 days university laboratory research",
