@@ -39,9 +39,9 @@ function renderNewsTable() {
         return;
     }
 
-    listElement.innerHTML = pagedData.map(item => `
+    listElement.innerHTML = pagedData.map((item, index) => `
         <tr class="notice-item">
-            <td class="notice-number">${item.id}</td>
+            <td class="notice-number">${allNewsData.length - startIndex - index}</td>
             <td class="notice-title-cell">
                 <a href="${escapeNewsHtml(item.link)}" ${getNewsLinkAttrs(item.link)}>
                     <span>${escapeNewsHtml(item.title)}</span>

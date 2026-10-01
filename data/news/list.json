@@ -28,6 +28,13 @@
         "link": "news-view.html?post=view_42"
     },
     {
+        "id": 54,
+        "title": "전북대, 공군미사일방어사령부와 미래 방공 역량 강화 나선다",
+        "source": "뉴전북",
+        "date": "2026.09.11",
+        "link": "news-view.html?post=view_54"
+    },
+    {
         "id": 41,
         "title": "[전북 24시] 전북대ㆍ공군미사일방어사령부, 방공·미사일방어 역량 강화 맞손",
         "source": "시사저널",
@@ -56,6 +63,20 @@
         "link": "news-view.html?post=view_38"
     },
     {
+        "id": 50,
+        "title": "전북대 첨단방위산업학과 서유정 학생.. 탈레스코리아 'STEM for ALL' 장학생 선발",
+        "source": "베리타스알파",
+        "date": "2026.08.18",
+        "link": "news-view.html?post=view_50"
+    },
+    {
+        "id": 51,
+        "title": "전북대, 글로벌 항공·방위기업 '탈레스코리아' 장학생 배출",
+        "source": "뉴시스",
+        "date": "2026.08.18",
+        "link": "news-view.html?post=view_51"
+    },
+    {
         "id": 35,
         "title": "전북대, 탈레스코리아 'STEM for ALL' 국내 첫 장학생 배출",
         "source": "전자신문",
@@ -75,6 +96,41 @@
         "source": "뉴스1",
         "date": "2026.08.11",
         "link": "news-view.html?post=view_36"
+    },
+    {
+        "id": 46,
+        "title": "전북대, 전북 최초 국방사업관리사 재직자 전문과정",
+        "source": "새전북신문",
+        "date": "2026.08.03",
+        "link": "news-view.html?post=view_46"
+    },
+    {
+        "id": 47,
+        "title": "전북 첫 '국방사업관리사' 재직자 과정 운영…전북대, 전문인력 45명 배출",
+        "source": "프레시안",
+        "date": "2026.08.03",
+        "link": "news-view.html?post=view_47"
+    },
+    {
+        "id": 48,
+        "title": "전북대, 국내외 대표 방산기업 임원 3명 객원교수 초빙",
+        "source": "전라일보",
+        "date": "2026.07.30",
+        "link": "news-view.html?post=view_48"
+    },
+    {
+        "id": 49,
+        "title": "전북대 방산기업 임원 3명 객원교수로 초빙.. 현장형 인재양성 본격화",
+        "source": "베리타스알파",
+        "date": "2026.07.30",
+        "link": "news-view.html?post=view_49"
+    },
+    {
+        "id": 52,
+        "title": "전북·전주 방산클러스터 선정…지자체·정치권·학계 '삼각 공조' 결실",
+        "source": "뉴스1",
+        "date": "2026.06.13",
+        "link": "news-view.html?post=view_52"
     },
     {
         "id": 34,
@@ -271,6 +327,13 @@
         "source": "뉴시스",
         "date": "2026.04.16",
         "link": "news-view.html?post=view_07"
+    },
+    {
+        "id": 53,
+        "title": "K방산 경쟁력 확보 정책적 지원 방향 모색",
+        "source": "국방일보",
+        "date": "2026.04.13",
+        "link": "news-view.html?post=view_53"
     },
     {
         "id": 6,
