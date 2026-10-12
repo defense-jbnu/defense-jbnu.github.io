@@ -501,8 +501,10 @@ const SITE_NAV_ITEMS = [
         href: 'pages/major/advanced.html',
         children: [
             { label: '학과 소개', href: 'pages/major/advanced.html#department' },
+            { label: '교육 목표', href: 'pages/major/advanced.html#goal' },
             { label: '교육과정', href: 'pages/major/advanced.html#curriculum' },
-            { label: '진로·채용 안내', href: 'pages/career/overview.html' },
+            { label: '산학협력 실무교육', href: 'pages/major/advanced.html#practice' },
+            { label: '졸업 후 진로', href: 'pages/major/advanced.html#career' },
         ],
     },
     {
