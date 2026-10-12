@@ -1,12 +1,12 @@
 (function () {
-    const popupUrl = 'popup/employment_260928/index.html';
-    const popupName = 'jbnuDefenseEmploymentPopup';
-    const storageKey = 'jbnuDefenseEmploymentPopup260928HiddenUntil';
+    const popupUrl = 'popup/iamd-forum_261015/index.html';
+    const popupName = 'jbnuDefenseIamdForumPopup';
+    const storageKey = 'jbnuDefenseIamdForum261015HiddenUntil';
     const foreverValue = 'forever';
-    const displayStartAt = new Date('2026-09-28T00:00:00+09:00').getTime();
-    const displayEndAt = new Date('2026-10-11T23:59:59+09:00').getTime();
-    const width = 680;
-    const height = 620;
+    const displayStartAt = new Date('2026-10-12T00:00:00+09:00').getTime();
+    const displayEndAt = new Date('2026-10-15T23:59:59+09:00').getTime();
+    const width = 600;
+    const height = 920;
 
     function shouldHidePopup() {
         const now = Date.now();
@@ -65,7 +65,7 @@
         closeButton.style.cursor = 'pointer';
 
         iframe.src = popupUrl;
-        iframe.title = 'Main notice popup';
+        iframe.title = 'IAMD Forum 2026 · October 15';
         iframe.style.display = 'block';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
@@ -105,11 +105,13 @@
             return;
         }
 
-        const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - width) / 2));
-        const top = Math.max(0, Math.round(window.screenY + (window.outerHeight - height) / 2));
+        const popupWidth = Math.min(width, window.screen.availWidth || width);
+        const popupHeight = Math.min(height, window.screen.availHeight || height);
+        const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - popupWidth) / 2));
+        const top = Math.max(0, Math.round(window.screenY + (window.outerHeight - popupHeight) / 2));
         const features = [
-            `width=${width}`,
-            `height=${height}`,
+            `width=${popupWidth}`,
+            `height=${popupHeight}`,
             `left=${left}`,
             `top=${top}`,
             'resizable=yes',

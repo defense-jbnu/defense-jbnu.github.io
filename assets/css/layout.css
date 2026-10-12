@@ -161,6 +161,19 @@ html[lang="en"] .site-nav > ul > li > a {
     letter-spacing: -0.01em;
 }
 
+html[lang="en"] .site-nav > ul > li:first-child > a {
+    max-width: 190px;
+    white-space: normal;
+    line-height: 1.35;
+}
+
+@media (min-width: 641px) {
+    html[lang="en"] .site-nav > ul > li {
+        display: flex;
+        align-items: center;
+    }
+}
+
 /* --- 서브메뉴 (2단계) --- */
 .sub-menu {
     position: absolute;

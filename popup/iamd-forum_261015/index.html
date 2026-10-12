@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>2026 통합방공·미사일방어 포럼 | 국방산업연구소</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { height: 100%; margin: 0; }
+        body { background: #071729; color: #fff; font-family: system-ui, -apple-system, sans-serif; }
+        .forum-popup { display: grid; grid-template-rows: minmax(0, 1fr) auto; height: 100%; border: 2px solid #447fae; }
+        .poster-link { display: block; min-height: 0; }
+        .poster-link img { display: block; width: 100%; height: 100%; object-fit: contain; }
+        .poster-link:focus-visible { outline: 3px solid #f5d15d; outline-offset: -3px; }
+        .popup-footer { border-top: 1px solid #447fae; background: #0c243d; }
+        .poster-tip { margin: 0; padding: 7px 12px; color: #c8d9e8; font-size: 12px; text-align: center; }
+        .popup-actions { display: grid; grid-template-columns: 1.35fr 1.2fr 0.7fr; border-top: 1px solid #29465f; }
+        .popup-actions button { min-height: 42px; padding: 8px; border: 0; background: transparent; color: #fff; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+        .popup-actions button + button { border-left: 1px solid #29465f; }
+        .popup-actions button:hover, .popup-actions button:focus-visible { background: #204d72; }
+        @media (max-width: 400px) { .popup-actions button { font-size: 11px; padding: 8px 3px; } }
+    </style>
+</head>
+<body>
+    <main class="forum-popup" aria-label="2026 통합방공·미사일방어 포럼 안내">
+        <a class="poster-link" href="../../assets/img/popup/KakaoTalk_20260930_144825166.png" target="_blank" rel="noopener noreferrer" aria-label="포스터 크게 보기">
+            <img src="../../assets/img/popup/KakaoTalk_20260930_144825166.png" width="1750" height="2475" alt="2026 통합방공·미사일방어 포럼. 중동전쟁을 통해 바라본 방공·미사일방어 패러다임의 변화. 2026년 10월 15일 목요일 10:00~16:00, 서울 공군호텔 3층 그랜드볼룸. 사전등록 마감일: 10월 6일.">
+        </a>
+        <footer class="popup-footer">
+            <p class="poster-tip" data-poster-tip>포스터를 클릭하면 크게 볼 수 있습니다.</p>
+            <div class="popup-actions">
+                <button type="button" data-popup-hide-today>오늘 하루 보지 않기</button>
+                <button type="button" data-popup-hide-forever>다시 보지 않기</button>
+                <button type="button" data-popup-close>닫기</button>
+            </div>
+        </footer>
+    </main>
+    <script>
+        (function () {
+            const storageKey = 'jbnuDefenseIamdForum261015HiddenUntil';
+            const hideToday = document.querySelector('[data-popup-hide-today]');
+            const hideForever = document.querySelector('[data-popup-hide-forever]');
+            const closeButton = document.querySelector('[data-popup-close]');
+
+            if (localStorage.getItem('jbnu-defense-language') === 'en') {
+                document.documentElement.lang = 'en';
+                document.title = 'IAMD Forum 2026 | K-Defense Industry Research Institute';
+                document.querySelector('main').setAttribute('aria-label', 'IAMD Forum 2026');
+                document.querySelector('.poster-link').setAttribute('aria-label', 'View Full-Size Poster');
+                document.querySelector('img').alt = 'IAMD Forum 2026: October 15, 2026, 10:00–16:00, Grand Ballroom, 3rd floor, Seoul Air Force Hotel. Pre-registration closed on October 6.';
+                document.querySelector('[data-poster-tip]').textContent = 'Click the poster to view it at full size.';
+                hideToday.textContent = 'Hide for Today';
+                hideForever.textContent = 'Do Not Show Again';
+                closeButton.textContent = 'Close';
+            }
+
+            function closePopup() {
+                if (window.opener) {
+                    window.close();
+                    return;
+                }
+                const targetOrigin = window.location.origin === 'null' ? '*' : window.location.origin;
+                window.parent.postMessage({ type: 'jbnu-main-popup-close' }, targetOrigin);
+            }
+
+            hideToday.addEventListener('click', () => {
+                const now = Date.now();
+                const koreaOffset = 9 * 60 * 60 * 1000;
+                const day = 24 * 60 * 60 * 1000;
+                const nextKoreaMidnight = (Math.floor((now + koreaOffset) / day) + 1) * day - koreaOffset;
+                localStorage.setItem(storageKey, String(nextKoreaMidnight));
+                closePopup();
+            });
+            hideForever.addEventListener('click', () => {
+                localStorage.setItem(storageKey, 'forever');
+                closePopup();
+            });
+            closeButton.addEventListener('click', closePopup);
+        })();
+    </script>
+</body>
+</html>
