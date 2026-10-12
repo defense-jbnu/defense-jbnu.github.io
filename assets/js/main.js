@@ -78,6 +78,7 @@ const SITE_COPY = {
         '찾아오시는 길': 'Location',
         '국방산업연구소': 'K-Defense Industry Research Institute',
         '교육과정': 'Curriculum',
+        '교육 과정': 'Curriculum',
         '진학·진로 프로그램': 'Study & Career Programs',
         '학부·대학원': 'Undergraduate & Graduate',
         '채용연계': 'Employment Pathways',
@@ -502,7 +503,7 @@ const SITE_NAV_ITEMS = [
         children: [
             { label: '학과 소개', href: 'pages/major/advanced.html#department' },
             { label: '교육 목표', href: 'pages/major/advanced.html#goal' },
-            { label: '교육과정', href: 'pages/major/advanced.html#curriculum' },
+            { label: '교육 과정', href: 'pages/major/advanced.html#curriculum' },
             { label: '산학협력 실무교육', href: 'pages/major/advanced.html#practice' },
             { label: '졸업 후 진로', href: 'pages/major/advanced.html#career' },
         ],

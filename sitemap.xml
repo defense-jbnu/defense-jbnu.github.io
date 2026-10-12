@@ -50,7 +50,7 @@
     </url>
     <url>
         <loc>https://defense.jbnu.ac.kr/pages/community/news.html</loc>
-        <lastmod>2026-09-22</lastmod>
+        <lastmod>2026-10-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -189,6 +189,30 @@
     <url>
         <loc>https://defense.jbnu.ac.kr/pages/community/view.html?post=view_01</loc>
         <lastmod>2026-08-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://defense.jbnu.ac.kr/pages/community/news-view.html?post=view_58</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://defense.jbnu.ac.kr/pages/community/news-view.html?post=view_57</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://defense.jbnu.ac.kr/pages/community/news-view.html?post=view_55</loc>
+        <lastmod>2026-10-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://defense.jbnu.ac.kr/pages/community/news-view.html?post=view_56</loc>
+        <lastmod>2026-10-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>

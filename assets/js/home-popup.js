@@ -1,12 +1,12 @@
 (function () {
-    const popupUrl = 'popup/iamd-forum_261015/index.html';
-    const popupName = 'jbnuDefenseIamdForumPopup';
-    const storageKey = 'jbnuDefenseIamdForum261015HiddenUntil';
+    const popupUrl = 'popup/kim-appointment_261012/index.html';
+    const popupName = 'jbnuDefenseKimAppointmentPopup';
+    const storageKey = 'jbnuDefenseKimAppointment261012HiddenUntil';
     const foreverValue = 'forever';
     const displayStartAt = new Date('2026-10-12T00:00:00+09:00').getTime();
     const displayEndAt = new Date('2026-10-15T23:59:59+09:00').getTime();
-    const width = 600;
-    const height = 920;
+    const width = 680;
+    const height = 740;
 
     function shouldHidePopup() {
         const now = Date.now();
@@ -65,7 +65,7 @@
         closeButton.style.cursor = 'pointer';
 
         iframe.src = popupUrl;
-        iframe.title = 'IAMD Forum 2026 · October 15';
+        iframe.title = 'Faculty Appointment · Kim Cheon-seok';
         iframe.style.display = 'block';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
