@@ -1,4 +1,5 @@
 (function () {
+    const popupEnabled = false;
     const popupUrl = 'popup/kim-appointment_261012/index.html';
     const popupName = 'jbnuDefenseKimAppointmentPopup';
     const storageKey = 'jbnuDefenseKimAppointment261012HiddenUntil';
@@ -101,7 +102,7 @@
     }
 
     function openMainPopup() {
-        if (shouldHidePopup()) {
+        if (!popupEnabled || shouldHidePopup()) {
             return;
         }
 
