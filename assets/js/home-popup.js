@@ -1,13 +1,13 @@
 (function () {
-    const popupEnabled = false;
-    const popupUrl = 'popup/kim-appointment_261012/index.html';
-    const popupName = 'jbnuDefenseKimAppointmentPopup';
-    const storageKey = 'jbnuDefenseKimAppointment261012HiddenUntil';
+    const popupEnabled = true;
+    const popupUrl = 'popup/defense-ai_261013/index.html';
+    const popupName = 'jbnuDefenseAiForumPopup';
+    const storageKey = 'jbnuDefenseAiForum261013HiddenUntil';
     const foreverValue = 'forever';
-    const displayStartAt = new Date('2026-10-12T00:00:00+09:00').getTime();
-    const displayEndAt = new Date('2026-10-15T23:59:59+09:00').getTime();
+    const displayStartAt = new Date('2026-10-13T00:00:00+09:00').getTime();
+    const displayEndAt = new Date('2026-10-26T23:59:59+09:00').getTime();
     const width = 680;
-    const height = 740;
+    const height = 720;
 
     function shouldHidePopup() {
         const now = Date.now();
@@ -66,7 +66,7 @@
         closeButton.style.cursor = 'pointer';
 
         iframe.src = popupUrl;
-        iframe.title = 'Faculty Appointment · Kim Cheon-seok';
+        iframe.title = 'Defense AI Forum · Seoul Economic Daily';
         iframe.style.display = 'block';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
