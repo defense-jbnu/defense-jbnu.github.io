@@ -1,0 +1,414 @@
+/* ADTI page additions; shared institute and education styles remain unchanged. */
+.department-page .education-tabs {
+    top: var(--department-header-height, 84px);
+}
+
+.department-page .education-panel,
+.department-pane,
+.department-content-section {
+    scroll-margin-top: var(--department-anchor-offset, 175px);
+}
+
+.department-pane > .department-content-section {
+    margin-bottom: 30px;
+}
+
+.department-pane .director-profile figcaption {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 10px;
+    text-align: center;
+}
+
+.department-pane .director-profile figcaption strong,
+.department-pane .director-profile figcaption span {
+    white-space: nowrap;
+}
+
+.department-intro-copy p + p {
+    margin-top: 18px;
+}
+
+.department-gallery {
+    min-width: 0;
+    margin-top: 30px;
+}
+
+.department-gallery-header {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.department-gallery-header > strong {
+    color: #003366;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.department-gallery-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.department-gallery-button {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #cddbe9;
+    border-radius: 50%;
+    background: #fff;
+    color: #003366;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.department-gallery-button:hover:not(:disabled),
+.department-gallery-button:focus-visible {
+    background: #003366;
+    color: #fff;
+}
+
+.department-gallery-button:disabled {
+    background: #f5f7fa;
+    color: #aebaca;
+    cursor: default;
+}
+
+.department-gallery-track {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 2px 2px 14px;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #809bb6 #edf2f7;
+}
+
+.department-gallery-card {
+    flex: 0 0 44%;
+    overflow: hidden;
+    min-width: 0;
+    margin: 0;
+    border: 1px solid #dce5ef;
+    border-radius: 8px;
+    background: #f7fafd;
+    scroll-snap-align: start;
+}
+
+.department-gallery-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.department-gallery-card figcaption {
+    padding: 14px 18px;
+    color: #526273;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.department-goal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+}
+
+.department-goal-grid .education-goal-img {
+    height: 220px;
+}
+
+.department-goal-grid .education-goal-txt {
+    min-height: 0;
+    padding: 20px 22px 16px;
+}
+
+.department-goal-grid .education-goal-txt strong {
+    margin-bottom: 10px;
+}
+
+.department-goal-grid .education-goal-txt p {
+    margin-bottom: 0;
+}
+
+.department-info-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.department-info-grid .education-info-list {
+    margin-top: 0;
+}
+
+.department-info-grid .education-info-list div {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 12px;
+}
+
+.department-phone {
+    display: block;
+    margin-top: 4px;
+    color: #003366;
+}
+
+.department-course-year,
+.department-course-map,
+.department-graduation-section {
+    margin-top: 38px;
+}
+
+.department-page h4 {
+    margin-bottom: 18px;
+    color: #003366;
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.department-page .department-table-note {
+    margin: 16px 0;
+    color: #526273;
+    font-size: 0.98rem;
+    font-weight: 500;
+}
+
+.department-table-wrap {
+    overflow-x: auto;
+    width: 100%;
+    border: 1px solid #dce5ef;
+    border-radius: 6px;
+    overscroll-behavior-x: contain;
+}
+
+.department-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    color: #3f4b5a;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.department-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.department-table th,
+.department-table td {
+    padding: 16px 14px;
+    border-right: 1px solid #dce5ef;
+    border-bottom: 1px solid #dce5ef;
+    line-height: 1.6;
+    vertical-align: middle;
+}
+
+.department-table tr > :last-child {
+    border-right: 0;
+}
+
+.department-table tbody tr:last-child > * {
+    border-bottom: 0;
+}
+
+.department-table thead th {
+    background: #edf4fa;
+    color: #003366;
+    font-weight: 800;
+}
+
+.department-table tbody tr:nth-child(even) {
+    background: #f8fafd;
+}
+
+.department-course-table th:not(:nth-child(4)),
+.department-course-table td:not(:nth-child(4)) {
+    white-space: nowrap;
+}
+
+.department-course-title {
+    width: 50%;
+    text-align: left;
+    font-weight: 700;
+}
+
+.department-course-english {
+    display: block;
+    margin-top: 3px;
+    color: #64748b;
+    font-size: 0.88rem;
+    font-weight: 500;
+}
+
+:lang(en) .department-course-english {
+    display: none;
+}
+
+.department-course-map {
+    padding-top: 30px;
+    border-top: 1px solid #e0e8f1;
+}
+
+.department-course-map-content:empty {
+    min-height: 80px;
+}
+
+.department-course-map-content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.department-graduation-section p + p {
+    margin-top: 12px;
+}
+
+.department-certification-grid,
+.department-submission-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.department-certification-grid article,
+.department-submission-grid > div {
+    padding: 26px;
+    border: 1px solid #dce5ef;
+    border-radius: 8px;
+    background: #f7fafd;
+}
+
+.department-certification-grid h5 {
+    margin-bottom: 14px;
+    color: #526273;
+    font-size: 1.06rem;
+    font-weight: 700;
+}
+
+.department-certification-grid strong {
+    color: #003366;
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.department-submission-grid {
+    margin-bottom: 18px;
+}
+
+.department-submission-grid strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #003366;
+    font-size: 1.16rem;
+}
+
+.department-details {
+    margin-top: 24px;
+    border-top: 1px solid #dce5ef;
+    border-bottom: 1px solid #dce5ef;
+}
+
+.department-details summary {
+    padding: 20px 8px;
+    color: #003366;
+    font-size: 1.12rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.department-details[open] .department-table-wrap {
+    margin-bottom: 20px;
+}
+
+.department-score-table {
+    min-width: 1060px;
+}
+
+.department-alternative-table {
+    min-width: 650px;
+}
+
+.department-alternative-table td:nth-child(2) {
+    text-align: left;
+}
+
+.department-alternative-table tr > :first-child {
+    width: 80px;
+}
+
+.department-alternative-table tr > :last-child {
+    width: 180px;
+}
+
+.department-page :focus-visible {
+    outline: 3px solid #1689d8;
+    outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+    .department-gallery-card {
+        flex-basis: 84%;
+    }
+
+    html[lang="en"] .department-page .education-hero h2 {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    html[lang="en"] .department-page .education-tabs .container {
+        overflow-x: auto;
+        scrollbar-width: thin;
+    }
+
+    html[lang="en"] .department-page .education-tab {
+        flex: 0 0 auto;
+        min-width: 130px;
+        padding: 14px 18px;
+        white-space: nowrap;
+        overflow-wrap: normal;
+    }
+
+    .department-goal-grid,
+    .department-info-grid,
+    .department-certification-grid,
+    .department-submission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .department-goal-grid .education-goal-txt {
+        min-height: auto;
+    }
+
+    .department-info-grid .education-info-list div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    .department-page h4 {
+        font-size: 1.2rem;
+    }
+
+    .department-certification-grid strong {
+        font-size: 1.35rem;
+    }
+
+    .department-table th,
+    .department-table td {
+        padding: 12px;
+    }
+}

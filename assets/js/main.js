@@ -79,6 +79,9 @@ const SITE_COPY = {
         '국방산업연구소': 'K-Defense Industry Research Institute',
         '교육과정': 'Curriculum',
         '교육 과정': 'Curriculum',
+        '학과소개': 'About ADTI',
+        '교육과정 및 이수체계': 'Curriculum & Course Sequence',
+        '졸업자격인증제': 'Graduation Certification',
         '진학·진로 프로그램': 'Study & Career Programs',
         '학부·대학원': 'Undergraduate & Graduate',
         '채용연계': 'Employment Pathways',
@@ -122,6 +125,7 @@ const SITE_COPY = {
         '교수진': 'Faculty',
         '조교수': 'Assistant Professor',
         '부교수': 'Associate Professor',
+        '정교수': 'Full Professor',
         '초빙교수': 'Invited Professor',
         '겸임교수': 'Adjunct Professor',
         '객원교수': 'Visiting Professor',
@@ -129,6 +133,8 @@ const SITE_COPY = {
         '명예교수': 'Professor Emeritus',
         '참여교수': 'Participating Faculty',
         '전임': 'Full-time Faculty',
+        '전임교수': 'Full-time Faculty',
+        '특임·객원교수': 'Distinguished & Visiting Faculty',
         '특ㆍ겸ㆍ객원 교수': 'Special, Adjunct & Visiting Faculty',
         '직원': 'Staff',
         '커뮤니티': 'Community',
@@ -498,10 +504,10 @@ const SITE_NAV_ITEMS = [
         label: '첨단방위산업학과',
         href: 'pages/major/advanced.html',
         children: [
-            { label: '학과 소개', href: 'pages/major/advanced.html#department' },
-            { label: '교육 목표', href: 'pages/major/advanced.html#goal' },
-            { label: '교육 과정', href: 'pages/major/advanced.html#curriculum' },
+            { label: '학과소개', href: 'pages/major/advanced.html#department' },
+            { label: '교육과정 및 이수체계', href: 'pages/major/advanced.html#curriculum' },
             { label: '산학협력 실무교육', href: 'pages/major/advanced.html#practice' },
+            { label: '졸업자격인증제', href: 'pages/major/advanced.html#graduation' },
             { label: '졸업 후 진로', href: 'pages/major/advanced.html#career' },
         ],
     },
@@ -965,7 +971,7 @@ function setupCardCarousels() {
             return;
         }
 
-        const cards = Array.from(track.querySelectorAll('.portal-carousel-card'));
+        const cards = Array.from(track.querySelectorAll('[data-carousel-card], .portal-carousel-card'));
 
         if (!cards.length) {
             return;
@@ -1029,6 +1035,9 @@ function setupCardCarousels() {
         }, { passive: true });
 
         window.addEventListener('resize', updateCarouselState);
+        if (typeof ResizeObserver !== 'undefined') {
+            new ResizeObserver(updateCarouselState).observe(track);
+        }
         updateCarouselState();
     });
 }
@@ -1045,13 +1054,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabCons = document.querySelectorAll('.tab-con');
 
+    const departmentPage = document.querySelector('.department-page');
+    if (departmentPage) {
+        const header = document.querySelector('.site-header');
+        const tabs = departmentPage.querySelector('.education-tabs');
+        const updateDepartmentOffsets = () => {
+            const headerHeight = header?.getBoundingClientRect().height || 0;
+            const tabsHeight = tabs?.getBoundingClientRect().height || 0;
+            departmentPage.style.setProperty('--department-header-height', `${headerHeight}px`);
+            departmentPage.style.setProperty('--department-anchor-offset', `${headerHeight + tabsHeight + 24}px`);
+        };
+        updateDepartmentOffsets();
+        if (typeof ResizeObserver !== 'undefined') {
+            const observer = new ResizeObserver(updateDepartmentOffsets);
+            if (header) observer.observe(header);
+            if (tabs) observer.observe(tabs);
+        }
+        window.addEventListener('resize', updateDepartmentOffsets);
+    }
+
     function activateTab(targetId, group = null) {
-        const targetContent = document.getElementById(targetId);
+        const targetElement = document.getElementById(targetId);
+        const targetContent = targetElement?.closest('.tab-con');
 
         if (!targetContent) {
             return;
         }
 
+        targetId = targetContent.id;
+        group = group || targetContent.dataset.tabGroup || null;
         const groupSelector = group ? `[data-tab-group="${group}"]` : '';
         const targetButton = document.querySelector(`.tab-btn${groupSelector}[data-tab="${targetId}"]`);
         const scopedButtons = group ? document.querySelectorAll(`.tab-btn${groupSelector}`) : tabBtns;
@@ -1062,15 +1093,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (targetButton) {
             targetButton.classList.add('active');
+            if (group === 'department') {
+                targetButton.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+            }
         }
 
         targetContent.classList.add('active');
+
+        if (targetElement !== targetContent) {
+            targetElement.scrollIntoView({ block: 'start' });
+        }
     }
 
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-tab');
             activateTab(targetId, btn.dataset.tabGroup || null);
+            if (btn.dataset.tabGroup === 'department') {
+                window.history.replaceState(null, '', `#${targetId}`);
+                document.getElementById(targetId)?.scrollIntoView({ block: 'start' });
+            }
         });
     });
 
