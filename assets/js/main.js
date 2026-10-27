@@ -497,6 +497,8 @@ const SITE_NAV_ITEMS = [
     {
         label: '첨단방위산업학과',
         href: 'pages/major/advanced.html',
+        englishMenuLines: ['Advanced Defense', 'Technology & Industry'],
+        englishTitle: 'Department of Advanced Defense Technology and Industry',
         children: [
             { label: '학과 소개', href: 'pages/major/advanced.html#department' },
             { label: '교육 목표', href: 'pages/major/advanced.html#goal' },
@@ -713,6 +715,18 @@ function renderSiteNavigation() {
         }
 
         const topLink = createNavLink(item, root);
+        if (siteLanguage === 'en' && item.englishMenuLines) {
+            const lines = item.englishMenuLines.map(text => {
+                const line = document.createElement('span');
+                line.className = 'site-nav-label-line';
+                line.textContent = text;
+                return line;
+            });
+            topLink.replaceChildren(...lines);
+            topLink.classList.add('site-nav-label-multiline');
+            topLink.setAttribute('aria-label', item.englishTitle || item.englishMenuLines.join(' '));
+            if (item.englishTitle) topLink.title = item.englishTitle;
+        }
         topLink.setAttribute('aria-haspopup', 'true');
         topLink.setAttribute('aria-expanded', 'false');
         menuItem.appendChild(topLink);
