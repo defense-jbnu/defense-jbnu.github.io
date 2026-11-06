@@ -1,0 +1,30 @@
+{
+    "id": 6,
+    "title": "[글로컬대학사업] 전북대학교 방위산업 맞춤형 인재양성 및 채용연계 협력 프로그램 기업 사전 면접 안내",
+    "date": "2026.11.06",
+    "author": "방산AI부트캠프사업단",
+    "image": "assets/img/notice/employment-companies_261106.png",
+    "imageAlt": "전북대학교 방위산업 채용연계 협력 프로그램의 기업별 채용정보 카드뉴스. 세부 내용은 첨부된 기업별 채용약정 PDF에서도 확인할 수 있습니다.",
+    "imageTitle": "기업별 채용정보",
+    "imageAfterContent": true,
+    "content": [
+        "전북대학교 방위산업 맞춤형 인재양성 및 채용연계 협력 프로그램의 기업 사전 면접 신청을 안내합니다. 참여를 희망하는 학생은 아래 접수 방법과 첨부파일을 확인하여 기한 내 지원하시기 바랍니다."
+    ],
+    "details": [
+        { "label": "신청대상", "value": "방위산업융합전공(학부, 3학년 이상), 방산융합전공 참여학과 재학생(학·석·박사), 첨단AI방위산업융합학과(석·박사), 방산AI부트캠프 이수자 등" },
+        { "label": "접수기간", "value": "2026.11.12.(목) 17:00까지" },
+        { "label": "접수방법", "value": "지원 서류를 아래 순서대로 정리하여 이메일 제출" },
+        { "label": "제출서류", "value": "응시원서, 이력서, 자기소개서, 개인정보 수집·이용 및 제3자 제공 동의서, 학위증명서, 성적증명서, 외국어능력시험 성적표 각 1부" },
+        { "label": "필수사항", "value": "직무 희망기업 1~5지망 작성 필수" },
+        { "label": "담당자 이메일", "value": "37256@jbnu.ac.kr" },
+        { "label": "문의", "value": "채용연계 프로그램 담당자 063-219-5775" }
+    ],
+    "closing": "이 외 자세한 사항과 제출 서식은 첨부파일을 확인하시기 바랍니다. 기업별 채용정보는 아래 카드뉴스에서도 확인할 수 있습니다.",
+    "attachments": [
+        { "name": "1. (채용연계)사전면접 신청안내.hwp", "path": "assets/files/notice/employment-interview_261106/1. (채용연계)사전면접 신청안내.hwp", "size": "815.5 KB" },
+        { "name": "2. [붙임 1] 기업별 채용약정(안).pdf", "path": "assets/files/notice/employment-interview_261106/2. [붙임 1] 기업별 채용약정(안).pdf", "size": "3.5 MB" },
+        { "name": "3. 기업채용정보_카드뉴스.zip", "path": "assets/files/notice/employment-interview_261106/3. 기업채용정보_카드뉴스.zip", "size": "911.3 KB" }
+    ],
+    "link": "https://www.jbnu.ac.kr/web/Board/219512/detailView.do?pageIndex=1&menu=2377",
+    "linkLabel": "학교 홈페이지 공지 원문"
+}

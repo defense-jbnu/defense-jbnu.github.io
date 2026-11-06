@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://defense.jbnu.ac.kr/</loc>
-        <lastmod>2026-11-05</lastmod>
+        <lastmod>2026-11-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -56,7 +56,7 @@
     </url>
     <url>
         <loc>https://defense.jbnu.ac.kr/pages/community/notice.html</loc>
-        <lastmod>2026-09-22</lastmod>
+        <lastmod>2026-11-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -161,6 +161,12 @@
         <lastmod>2026-09-22</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://defense.jbnu.ac.kr/pages/community/view.html?post=view_07</loc>
+        <lastmod>2026-11-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://defense.jbnu.ac.kr/pages/community/view.html?post=view_06</loc>

@@ -1,13 +1,13 @@
 (function () {
     const popupEnabled = true;
-    const popupUrl = 'popup/defense-ai_261013/index.html';
-    const popupName = 'jbnuDefenseAiForumPopup';
-    const storageKey = 'jbnuDefenseAiForum261013HiddenUntil';
+    const popupUrl = 'popup/employment-interview_261106/index.html';
+    const popupName = 'jbnuEmploymentInterviewPopup';
+    const storageKey = 'jbnuEmploymentInterview261106HiddenUntil';
     const foreverValue = 'forever';
-    const displayStartAt = new Date('2026-10-13T00:00:00+09:00').getTime();
-    const displayEndAt = new Date('2026-10-26T23:59:59+09:00').getTime();
+    const displayStartAt = new Date('2026-11-06T00:00:00+09:00').getTime();
+    const displayEndAt = new Date('2026-11-13T23:59:59.999+09:00').getTime();
     const width = 680;
-    const height = 720;
+    const height = 760;
 
     function shouldHidePopup() {
         const now = Date.now();
@@ -66,7 +66,7 @@
         closeButton.style.cursor = 'pointer';
 
         iframe.src = popupUrl;
-        iframe.title = 'Defense AI Forum · Seoul Economic Daily';
+        iframe.title = '채용연계 협력 프로그램 기업 사전 면접 안내';
         iframe.style.display = 'block';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
