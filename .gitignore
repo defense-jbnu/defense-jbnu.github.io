@@ -1,4 +1,0 @@
-# Locally generated review output and Python bytecode.
-/.news-review/
-__pycache__/
-*.py[cod]
