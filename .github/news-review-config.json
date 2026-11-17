@@ -1,0 +1,43 @@
+{
+  "site_url": "https://defense.jbnu.ac.kr",
+  "lookback_days": 14,
+  "results_per_query": 100,
+  "pages_per_query": 1,
+  "queries": [
+    "전북대 방산",
+    "전북대학교 방위산업",
+    "첨단방위산업학과",
+    "전북대 국방산업연구소",
+    "전북대 방위산업연구소",
+    "전북대 MDA",
+    "전북대 방산AI부트캠프"
+  ],
+  "search_faculty": true,
+  "faculty_query_suffix": "",
+  "faculty": [
+    "전광호", "홍성민", "장원준", "송문원", "이대규", "유준수",
+    "김만영", "김진수", "김태환", "이덕진", "조상호", "김명훈", "최성호",
+    "강은호", "원인철", "이병권", "정동철", "안경수", "이봉근",
+    "정규헌", "김경일", "남궁혁준", "Will Shaffer"
+  ],
+  "institution_terms": ["전북대학교", "전북대", "JBNU"],
+  "entity_terms": [
+    "첨단방위산업학과", "국방산업연구소", "K-방위산업연구소", "방위산업연구소",
+    "첨단AI방위산업융합", "방산AI부트캠프", "JBNU-Purdue", "JBNU Purdue"
+  ],
+  "topic_terms": [
+    "방산", "방위산업", "국방", "무기", "미사일", "군수", "방공", "획득",
+    "채용연계", "채용 연계", "MDA", "부트캠프", "K9", "KF-21"
+  ],
+  "column_markers": ["[기고]", "[칼럼]", "장원준 칼럼", "강은호 칼럼", "장원준의 방산 인사이트"],
+  "exclude_terms": [],
+  "source_names": {
+    "sedaily.com": "서울경제",
+    "news2day.co.kr": "뉴스투데이",
+    "hankookilbo.com": "한국일보",
+    "etnews.com": "전자신문",
+    "mtn.co.kr": "MTN",
+    "sidae.com": "동행미디어 시대",
+    "kookbang.dema.mil.kr": "국방일보"
+  }
+}
