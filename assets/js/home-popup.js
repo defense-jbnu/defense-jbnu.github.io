@@ -1,13 +1,13 @@
 (function () {
     const popupEnabled = true;
-    const popupUrl = 'popup/employment-interview_261106/index.html';
-    const popupName = 'jbnuEmploymentInterviewPopup';
-    const storageKey = 'jbnuEmploymentInterview261106HiddenUntil';
+    const popupUrl = 'popup/army-cooperation_261122/index.html';
+    const popupName = 'jbnuArmyCooperationPopup';
+    const storageKey = 'jbnuArmyCooperation261122HiddenUntil';
     const foreverValue = 'forever';
-    const displayStartAt = new Date('2026-11-06T00:00:00+09:00').getTime();
-    const displayEndAt = new Date('2026-11-13T23:59:59.999+09:00').getTime();
+    const displayStartAt = new Date('2026-11-22T00:00:00+09:00').getTime();
+    const displayEndAt = new Date('2026-11-29T23:59:59.999+09:00').getTime();
     const width = 680;
-    const height = 760;
+    const height = 860;
 
     function shouldHidePopup() {
         const now = Date.now();
@@ -66,7 +66,9 @@
         closeButton.style.cursor = 'pointer';
 
         iframe.src = popupUrl;
-        iframe.title = '채용연계 협력 프로그램 기업 사전 면접 안내';
+        iframe.title = localStorage.getItem('jbnu-defense-language') === 'en'
+            ? 'JBNU and ROK Army defense logistics partnership'
+            : '전북대·육군 방산·군수 분야 협력 안내';
         iframe.style.display = 'block';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
