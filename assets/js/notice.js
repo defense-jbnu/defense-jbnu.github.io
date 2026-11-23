@@ -58,9 +58,19 @@ function renderPagination() {
         return;
     }
 
-    let paginationHtml = `<button type="button" onclick="movePage(${currentPage - 1})" aria-label="이전 페이지">&laquo;</button>`;
+    const groupSize = 10;
+    const groupStart = Math.floor((currentPage - 1) / groupSize) * groupSize + 1;
+    const groupEnd = Math.min(groupStart + groupSize - 1, totalPages);
+    const navigationButton = (page, label, symbol) => {
+        const disabled = page < 1 || page > totalPages;
+        return `<button type="button" class="pagination-nav" ${disabled ? 'disabled' : `onclick="movePage(${page})"`} aria-label="${label}" title="${label}">${symbol}</button>`;
+    };
 
-    for (let i = 1; i <= totalPages; i++) {
+    let paginationHtml = navigationButton(groupStart - groupSize, '이전 10개 페이지', '&laquo;');
+    paginationHtml += navigationButton(currentPage - 1, '이전 페이지', '&lsaquo;');
+    paginationHtml += '<span class="community-pagination-pages">';
+
+    for (let i = groupStart; i <= groupEnd; i++) {
         const isActive = i === currentPage;
         paginationHtml += `
             <button type="button" onclick="movePage(${i})" class="${isActive ? 'active' : ''}" ${isActive ? 'aria-current="page"' : ''}>
@@ -68,7 +78,9 @@ function renderPagination() {
             </button>`;
     }
 
-    paginationHtml += `<button type="button" onclick="movePage(${currentPage + 1})" aria-label="다음 페이지">&raquo;</button>`;
+    paginationHtml += '</span>';
+    paginationHtml += navigationButton(currentPage + 1, '다음 페이지', '&rsaquo;');
+    paginationHtml += navigationButton(groupStart + groupSize, '다음 10개 페이지', '&raquo;');
 
     wrap.innerHTML = paginationHtml;
 }
