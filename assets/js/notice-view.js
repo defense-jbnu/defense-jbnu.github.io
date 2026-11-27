@@ -158,7 +158,7 @@ function renderPost(post) {
     const image = post.image ? `
         ${post.imageTitle ? `<h4 class="notice-image-title">${escapeHtml(post.imageTitle)}</h4>` : ''}
         <figure class="community-post-image${post.imageAfterContent ? ' community-post-cardnews' : ''}">
-            ${post.imageAfterContent ? `<a href="${escapeHtml(resolveAssetPath(post.image))}" target="_blank" rel="noopener noreferrer" aria-label="카드뉴스 원본 크게 보기">` : ''}
+            ${post.imageAfterContent ? `<a href="${escapeHtml(resolveAssetPath(post.image))}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(post.imageLinkLabel || '카드뉴스 원본 크게 보기')}">` : ''}
             <img src="${escapeHtml(resolveAssetPath(post.image))}" alt="${escapeHtml(post.imageAlt || post.title || '공지 이미지')}"${post.imageAfterContent ? ' loading="lazy"' : ''}>
             ${post.imageAfterContent ? '</a><figcaption>이미지를 누르면 원본을 크게 볼 수 있습니다.</figcaption>' : ''}
         </figure>

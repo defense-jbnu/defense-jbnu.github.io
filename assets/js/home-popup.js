@@ -1,13 +1,30 @@
 (function () {
     const popupEnabled = true;
-    const popupUrl = 'popup/army-cooperation_261122/index.html';
-    const popupName = 'jbnuArmyCooperationPopup';
-    const storageKey = 'jbnuArmyCooperation261122HiddenUntil';
+    const popupUrl = 'popup/special-lecture_261208/index.html';
+    const popupName = 'jbnuSpecialLecturePopup';
+    const storageKey = 'jbnuSpecialLecture261208HiddenUntil';
     const foreverValue = 'forever';
-    const displayStartAt = new Date('2026-11-22T00:00:00+09:00').getTime();
-    const displayEndAt = new Date('2026-11-29T23:59:59.999+09:00').getTime();
-    const width = 680;
-    const height = 860;
+    const displayStartAt = new Date('2026-11-27T00:00:00+09:00').getTime();
+    const displayEndAt = new Date('2026-12-08T23:59:59.999+09:00').getTime();
+    const width = 600;
+    const height = 946;
+    const posterAspectRatio = 1084 / 1451;
+    // Header (48), notice link (52), footer (44), and outer borders (4).
+    const controlsHeight = 148;
+    const borderWidth = 4;
+
+    function getPopupSize(availableWidth, availableHeight) {
+        const maxHeight = Math.min(height, availableHeight);
+        const fittedWidth = Math.floor(Math.min(
+            width,
+            availableWidth,
+            Math.max(borderWidth + 1, (maxHeight - controlsHeight) * posterAspectRatio + borderWidth)
+        ));
+        return {
+            width: fittedWidth,
+            height: Math.ceil((fittedWidth - borderWidth) / posterAspectRatio + controlsHeight)
+        };
+    }
 
     function shouldHidePopup() {
         const now = Date.now();
@@ -31,6 +48,7 @@
     }
 
     function openLayerPopup() {
+        const size = getPopupSize(window.innerWidth - 36, window.innerHeight - 36);
         const overlay = document.createElement('div');
         const frameWrap = document.createElement('div');
         const closeButton = document.createElement('button');
@@ -45,8 +63,8 @@
         overlay.style.background = 'rgba(0, 0, 0, 0.58)';
 
         frameWrap.style.position = 'relative';
-        frameWrap.style.width = `min(${width}px, 100%)`;
-        frameWrap.style.height = `min(${height}px, calc(100vh - 36px))`;
+        frameWrap.style.width = `min(${size.width}px, 100%)`;
+        frameWrap.style.height = `min(${size.height}px, calc(100dvh - 36px))`;
         frameWrap.style.background = '#101624';
         frameWrap.style.boxShadow = '0 24px 60px rgba(0, 0, 0, 0.34)';
 
@@ -67,8 +85,8 @@
 
         iframe.src = popupUrl;
         iframe.title = localStorage.getItem('jbnu-defense-language') === 'en'
-            ? 'JBNU and ROK Army defense logistics partnership'
-            : '전북대·육군 방산·군수 분야 협력 안내';
+            ? 'JBNU Distinguished Professor Special Lecture: Andrew Philip Hunter'
+            : '전북대학교 석좌교수 특별강연 안내';
         iframe.style.display = 'block';
         iframe.style.width = '100%';
         iframe.style.height = '100%';
@@ -108,8 +126,12 @@
             return;
         }
 
-        const popupWidth = Math.min(width, window.screen.availWidth || width);
-        const popupHeight = Math.min(height, window.screen.availHeight || height);
+        const size = getPopupSize(
+            (window.screen.availWidth || width + 36) - 36,
+            (window.screen.availHeight || height + 100) - 100
+        );
+        const popupWidth = size.width;
+        const popupHeight = size.height;
         const left = Math.max(0, Math.round(window.screenX + (window.outerWidth - popupWidth) / 2));
         const top = Math.max(0, Math.round(window.screenY + (window.outerHeight - popupHeight) / 2));
         const features = [
